@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/addben"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_ben"
+        android:title="@string/addben"/>
+
+
+    <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"/>
+
+</menu>

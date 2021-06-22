@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Language"
+            type="io.thoughtbox.hamdan.global.Dictionary" />
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.views.addBen.AddBenBank.UiInteractions" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".views.addBen.AddBenBank">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline135"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline136"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline137"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_reg"
+                android:text="@{Language.get(`addBankBenNewSet`)}"
+                android:textColor="@color/textColor"
+                  android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline135"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{Clickers::onBackClicked}"
+                app:layout_constraintBottom_toTopOf="@+id/guideline135"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout34"
+              style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`nameBankNewSet`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toTopOf="@+id/guideline135">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:fontFamily="@font/opensans_reg"
+
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout35"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`mobileBankNewSet`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout34">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_reg"
+                    android:inputType="phone"
+                    android:digits="0123456789"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout36"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`accountNumberBankNewSet`)}"
+                android:longClickable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout35">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/account_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:fontFamily="@font/opensans_reg"
+                    android:longClickable="false"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout37"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`confirmAccountNumberBankNewSet`)}"
+                android:longClickable="false"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout36">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_reg"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:inputType="textPassword"
+                    android:longClickable="false"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline138"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout38"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:hint="@{Language.get(`typeBankNewSet`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline138"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout44">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_reg"
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onUserTypeClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout40"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint="@{Language.get(`countryBankNewSet`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline138"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout44">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/country"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_reg"
+
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onCountryClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/transfertype_view"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:hint="@{Language.get(`transferTypeFastCashNewSet`)}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/guideline138"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout38">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txntype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_reg"
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onTxnTypeClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bank_view"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:hint="@{Language.get(`bankBankNewSet`)}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline138"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout40">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_reg"
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onBankClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/branchView"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`branchBankNewSet`)}"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/transfertype_view">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/branch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_reg"
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onBranchClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout43"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`relationBeneficiaryBankNewSet`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout37">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/relation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+
+                    android:ellipsize="end"
+                    android:focusable="false"
+
+                    android:fontFamily="@font/opensans_reg"
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onRelationClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout44"
+               style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@{Language.get(`nationalityBankNewSet`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout43">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nationality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:ellipsize="end"
+                    android:focusable="false"
+
+                    android:fontFamily="@font/opensans_reg"
+                    android:maxLines="1"
+                    android:onClick="@{Clickers::onNationalityClicked}"
+                    android:singleLine="true"
+                    android:textColor="@color/textColor"
+                      android:textSize="12sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <android.widget.Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/roundbutton"
+                android:onClick="@{Clickers::onSubmitted}"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="@{Language.get(`submitBankNewSet`)}"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/roboto_bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline137"
+                app:layout_constraintStart_toStartOf="@+id/guideline136"
+                app:layout_constraintTop_toBottomOf="@+id/branchView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

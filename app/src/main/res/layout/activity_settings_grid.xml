@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.views.SettingsGrid.UiInteraction" />
+
+        <variable
+            name="Language"
+            type="io.thoughtbox.hamdan.global.Dictionary" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.SettingsGrid">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline158"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline159"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline160"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Language.get(`settings`)}"
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/roboto_bold"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline158"
+            app:layout_constraintEnd_toStartOf="@+id/guideline160"
+            app:layout_constraintStart_toStartOf="@+id/guideline159"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{Clickers::onBackClicked}"
+            app:layout_constraintBottom_toTopOf="@+id/guideline158"
+            app:layout_constraintStart_toStartOf="@+id/guideline159"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+<ScrollView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/guideline160"
+    app:layout_constraintStart_toStartOf="@+id/guideline159"
+    app:layout_constraintTop_toTopOf="@+id/guideline158">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+        >
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@{Language.get(`securitySettings`)}"
+             android:textSize="14sp"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toTopOf="@+id/guideline158" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:weightSum="3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/textView67">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onLanguageClicked}"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:text="@{Language.get(`languages`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:drawableTopCompat="@drawable/ic_aj_settings_language" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onPasswordClicked}"
+                    android:text="@{Language.get(`changePassword`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_pwd_change" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onPinClicked}"
+
+                    android:text="@{Language.get(`changeTransactionPin`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_change_pin" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:weightSum="3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onBiometricClicked}"
+                    android:text="@{Language.get(`registerBiometric`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_biometric" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onBlockAccountClicked}"
+                    android:text="@{Language.get(`blockAccount`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_blockac" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onNotificationClicked}"
+                    android:text="@{Language.get(`notification`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_chat" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@{Language.get(`support`)}"
+                android:textSize="14sp"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:weightSum="3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/title2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onHelpClicked}"
+                    android:text="@{Language.get(`help`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_help_sett" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onFaqClicked}"
+                    android:text="@{Language.get(`faq`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_chat" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onCustomerSupportClicked}"
+                    android:text="@{Language.get(`customersupport`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_contact" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@{Language.get(`informations`)}"
+                android:textSize="14sp"
+                android:textColor="@color/textColor"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+
+                android:paddingBottom="16dp"
+                android:weightSum="3"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/title3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onTermsClicked}"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:text="@{Language.get(`termsCondition`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:drawableTopCompat="@drawable/ic_aj_utls" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onPrivacyClicked}"
+                    android:text="@{Language.get(`privacyPolicy`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_privacy" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:onClick="@{Clickers::onFeedbackClicked}"
+                    android:text="@{Language.get(`feedbacks`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    app:drawableTopCompat="@drawable/ic_aj_feedback" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline160"
+                app:layout_constraintStart_toStartOf="@+id/guideline159"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+        </LinearLayout>
+</ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

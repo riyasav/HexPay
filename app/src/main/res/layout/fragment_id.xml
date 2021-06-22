@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.fragments.IDFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            tools:context=".fragments.IDFragment">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline128"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline129"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="225dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline130"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="User Registration"
+                android:textColor="@color/textColor"
+               android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline128"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView30"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="@{Clickers::onBackClicked}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toTopOf="@+id/guideline128"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.484" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout26"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toTopOf="@+id/guideline128">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="ID Number"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/textColor"
+                  android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout29"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout26">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idtype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="ID Type"
+                    android:onClick="@{Clickers::onIdTypeClicked}"
+                    android:textColor="@color/textColor"
+                   android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout33"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout29">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/id_expiry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="ID Expiry"
+                    android:onClick="@{Clickers::onIdExpiryClicked}"
+                    android:textColor="@color/textColor"
+                   android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline131"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <ImageView
+                android:id="@+id/front"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:onClick="@{Clickers::onFrontImageClicked}"
+                android:src="@drawable/id_front"
+                app:layout_constraintEnd_toStartOf="@+id/guideline131"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+            <TextView
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+
+                android:fontFamily="@font/roboto_bold"
+                android:text="Upload both sides of you ID card"
+                android:textColor="@color/textColor"
+               android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout33" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:onClick="@{Clickers::onBackImageClicked}"
+                android:src="@drawable/id_back"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline131"
+                app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Upload your selfie video"
+                android:textColor="@color/textColor"
+               android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/front" />
+
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+            <android.widget.Button
+                android:id="@+id/proceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbutton"
+                android:onClick="@{Clickers::onSubmitClicked}"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="Proceed"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toBottomOf="@+id/video_view" />
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:onClick="@{Clickers::onVideoClicked}"
+                android:src="@drawable/ic_play"
+                app:layout_constraintBottom_toBottomOf="@+id/video_view"
+                app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintStart_toStartOf="@+id/guideline129"
+                app:layout_constraintTop_toTopOf="@+id/video_view"
+                app:layout_constraintVertical_bias="0.5" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

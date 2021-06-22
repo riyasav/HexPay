@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.DashBoard.Interactions" />
+
+        <variable
+            name="language"
+            type="io.thoughtbox.hamdan.global.Dictionary" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="6dp"
+            android:layout_gravity="center_horizontal"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_notch" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:nestedScrollingEnabled="false"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/cardBg"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+               >
+
+                    <ImageView
+                        android:id="@+id/bank_transfer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_bank_transfer"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+                        app:layout_constraintStart_toStartOf="@+id/guideline17"
+                        app:layout_constraintTop_toTopOf="@+id/guideline16" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="8dp"
+
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{language.get(`bankTransfer`)}"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/guideline18"
+                        app:layout_constraintTop_toTopOf="@+id/guideline16" />
+
+                    <ImageView
+                        android:id="@+id/redline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_red_line"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline30"
+                        app:layout_constraintStart_toStartOf="@+id/textView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.20" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.35" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/cardBg"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                 >
+
+                    <ImageView
+                        android:id="@+id/fastcash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cash_pickup"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline20"
+                        app:layout_constraintStart_toStartOf="@+id/guideline20"
+                        app:layout_constraintTop_toTopOf="@+id/guideline19" />
+
+                    <TextView
+                        android:id="@+id/fastcash_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{language.get(`cashPickUp`)}"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline19"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/guideline21"
+                        app:layout_constraintTop_toTopOf="@+id/guideline19" />
+
+                    <ImageView
+                        android:id="@+id/blueline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_blue_line"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline29"
+                        app:layout_constraintStart_toStartOf="@+id/fastcash_lbl"
+                        app:layout_constraintTop_toBottomOf="@+id/fastcash_lbl" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.20" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.35" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:nestedScrollingEnabled="false"
+            android:weightSum="2">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/cardBg"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                >
+
+                    <ImageView
+                        android:id="@+id/report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_report"
+                        app:layout_constraintBottom_toTopOf="@+id/report_guideline16"
+                        app:layout_constraintEnd_toStartOf="@+id/report_guideline17"
+                        app:layout_constraintStart_toStartOf="@+id/report_guideline17"
+                        app:layout_constraintTop_toTopOf="@+id/report_guideline16" />
+
+                    <TextView
+                        android:id="@+id/report_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{language.get(`transactionReport`)}"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/report_guideline16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/report_guideline18"
+                        app:layout_constraintTop_toTopOf="@+id/report_guideline16" />
+
+                    <ImageView
+                        android:id="@+id/greenline"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_green_line"
+                        app:layout_constraintEnd_toStartOf="@+id/report_guideline30"
+                        app:layout_constraintStart_toStartOf="@+id/report_lbl"
+                        app:layout_constraintTop_toBottomOf="@+id/report_lbl" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/report_guideline16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/report_guideline17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.20" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/report_guideline18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.35" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/report_guideline30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/cardBg"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   >
+
+                    <ImageView
+                        android:id="@+id/rates"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rate"
+                        app:layout_constraintBottom_toTopOf="@+id/rate_guideline19"
+                        app:layout_constraintEnd_toStartOf="@+id/rate_guideline20"
+                        app:layout_constraintStart_toStartOf="@+id/rate_guideline20"
+                        app:layout_constraintTop_toTopOf="@+id/rate_guideline19" />
+
+                    <TextView
+                        android:id="@+id/rates_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{language.get(`transferRate`)}"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@+id/rate_guideline19"
+                        app:layout_constraintEnd_toStartOf="@+id/rate_guideline29"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/rate_guideline21"
+                        app:layout_constraintTop_toTopOf="@+id/rate_guideline19" />
+
+                    <ImageView
+                        android:id="@+id/line"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/ic_dark_blue_line"
+                        app:layout_constraintEnd_toStartOf="@+id/rate_guideline29"
+                        app:layout_constraintStart_toStartOf="@+id/rates_lbl"
+                        app:layout_constraintTop_toBottomOf="@+id/rates_lbl" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/rate_guideline19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/rate_guideline20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.20" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/rate_guideline21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.35" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/rate_guideline29"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@{language.get(`locateBranches`)}"
+            android:textColor="@color/textColor" />
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:nestedScrollingEnabled="true"
+            tools:context=".DashBoard" />
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.views.remittance.TransferView" />
+
+        <variable
+            name="Language"
+            type="io.thoughtbox.hamdan.global.Dictionary" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            tools:context=".views.remittance.TransferView">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline140"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline141"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline142"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{Clickers::onBackClicked}"
+                app:layout_constraintBottom_toTopOf="@+id/guideline140"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="40dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@{Language.get(`transfer`)}"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline140"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout39"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:boxStrokeColor="@color/white"
+                android:textColorHint="@color/white"
+                app:hintTextColor="@color/white"
+                android:hint="@{Language.get(`amount`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline143"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout49"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`currency`)}"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout39"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toStartOf="@+id/guideline143"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayout39">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/currency"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_grey"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:onClick="@{Clickers::onCurrencyClicked}"
+                     android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout41"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`mode`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout49">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_grey"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:onClick="@{Clickers::onModeClicked}"
+                     android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout47"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`bank`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout41">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_grey"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:onClick="@{Clickers::onBankClicked}"
+                     android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout48"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`refno`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout47">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ref_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:inputType="text"
+                     android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/bank_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="textInputLayout47,textInputLayout48" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout42"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`source`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout48">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_grey"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:onClick="@{Clickers::onSourceClicked}"
+                     android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout45"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`purpose`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout42">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/purpose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_grey"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:onClick="@{Clickers::onPurposeClicked}"
+                     android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline143"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.6" />
+
+
+            <android.widget.Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/roundbutton"
+                android:onClick="@{Clickers::onSubmitClicked}"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="@{Language.get(`submit`)}"
+                android:textColor="@color/grey"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout46" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toTopOf="@+id/guideline140">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_rate_bg"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{Language.get(`transferType`)}"
+                         android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txntype_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/opensans_bold"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/textColor2"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline144"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline144"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="20dp"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <TextView
+                        android:id="@+id/textView50"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{Language.get(`beneficiaryName`)}"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{Language.get(`accountNumber`)}"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+                    <TextView
+                        android:id="@+id/name_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/opensans_bold"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/textColor2"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline144"
+                        app:layout_constraintTop_toBottomOf="@+id/txntype_lbl" />
+
+                    <TextView
+                        android:id="@+id/agent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{Language.get(`bank`)}"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+                    <TextView
+                        android:id="@+id/textView54"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:text="@{Language.get(`branch`)}"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/agent" />
+
+                    <TextView
+                        android:id="@+id/account_number_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/opensans_bold"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/textColor2"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline144"
+                        app:layout_constraintTop_toBottomOf="@+id/name_lbl" />
+
+                    <TextView
+                        android:id="@+id/bank_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/opensans_bold"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/textColor2"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline144"
+                        app:layout_constraintTop_toBottomOf="@+id/account_number_lbl" />
+
+                    <TextView
+                        android:id="@+id/branch_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:ellipsize="marquee"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="@font/opensans_bold"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textColor="@color/textColor2"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline144"
+                        app:layout_constraintTop_toBottomOf="@+id/bank_lbl" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout46"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="@{Language.get(`offerCode`)}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline142"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout45">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/offercode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/opensans_bold"
+                     android:textColor="@color/black"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

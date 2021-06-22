@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="Language"
+            type="io.thoughtbox.hamdan.global.Dictionary" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/topround"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close_white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_thumb_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titile_lbl_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="OTP"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+
+                    android:text="Enter pin to verify"
+                    android:textColor="@color/textColor" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/otplyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/otpMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="0dp"
+                android:fontFamily="@font/opensans_reg"
+                android:gravity="center_horizontal"
+                android:text="@string/otp_message"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/pin_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pin_first_edittextlyt"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+
+                    android:hint="*"
+                    android:textColorHint="@color/colorPrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pin_first_edittext"
+                        style="@style/pin_edittext_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:digits="1234567890"
+                        android:ems="1"
+                        android:fontFamily="@font/opensans_bold"
+                        android:hint="*"
+                        android:inputType="numberPassword"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pin_second_edittextlyt"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:hint="*"
+                    android:textColorHint="@color/colorPrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pin_second_edittext"
+                        style="@style/pin_edittext_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:digits="1234567890"
+                        android:ems="1"
+                        android:fontFamily="@font/opensans_bold"
+                        android:hint="*"
+                        android:inputType="numberPassword"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pin_third_edittextlyt"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:hint="*"
+                    android:textColorHint="@color/colorPrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pin_third_edittext"
+                        style="@style/pin_edittext_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:digits="1234567890"
+                        android:ems="1"
+                        android:fontFamily="@font/opensans_bold"
+                        android:hint="*"
+                        android:inputType="numberPassword"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pin_forth_edittextlyt"
+                    style="@style/Widget.Design.TextInputLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:hint="*"
+                    android:textColorHint="@color/colorPrimary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/pin_forth_edittext"
+                        style="@style/pin_edittext_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:digits="1234567890"
+                        android:ems="1"
+                        android:fontFamily="@font/opensans_bold"
+                        android:inputType="numberPassword"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/pin_hidden_edittext"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:contentDescription="@string/pin_content_desc"
+                android:cursorVisible="false"
+                android:digits="1234567890"
+                android:gravity="center_horizontal"
+                android:inputType="numberPassword"
+                android:maxLength="5"
+                android:textColor="#00000000" />
+
+            <android.widget.Button
+                android:id="@+id/otp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/roundbutton"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="@string/submit"
+                android:textColor="@color/grey" />
+
+            <Button
+                android:id="@+id/resend"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:textAllCaps="false"
+                android:text="@string/resend_otp"
+                android:textColor="@color/textColor"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

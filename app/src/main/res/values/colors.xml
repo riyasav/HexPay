@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--        brown theme-->
+    <!--            <color name="colorPrimary">#795548</color>-->
+    <!--            <color name="colorPrimaryDark">#3E2723</color>-->
+    <!--        <color name="colorAccent">#5D4037</color>-->
+    <!--        <color name="textColor">#4E342E</color>-->
+    <!--        <color name="cardBg">#FFFBFB</color>-->
+    <!--        <color name="logoBg">#FAF8F8</color>-->
+
+    <!--    <color name="first">#D7CCC8</color>-->
+    <!--    <color name="second">#BCAAA4</color>-->
+
+
+    <!--    blue theme-->
+    <!--    <color name="colorPrimary">#673AB7</color>-->
+    <!--    <color name="colorPrimaryDark">#161a51</color>-->
+    <!--    <color name="colorAccent">#9575CD</color>-->
+    <!--    <color name="textColor">#3e4475</color>-->
+    <!--    <color name="cardBg">#f2eefb</color>-->
+    <!--    <color name="logoBg">#E3F2FD</color>-->
+
+
+    <!--    blue theme-->
+    <color name="colorPrimary">#f6e600</color>
+    <color name="colorPrimaryDark">#ee2935</color>
+    <color name="colorAccent">#000000</color>
+    <color name="textColor">#3e4475</color>
+    <color name="textColor2">#FF424242</color>
+<color name="black">#000000</color>
+    <color name="cardBg">#f2f2f2</color>
+    <color name="logoBg">#FAF8F8</color>
+
+    <!--    3e4475-->
+    <color name="grey_transparent">#70ffffff</color>
+
+    <!--purpleBg-->
+    <!--    <color name="zero">#EDE7F6</color>-->
+        <color name="gold">#c8ae57</color>
+        <color name="trasnslucent">#FF333333</color>
+
+
+    <color name="zero">#FAF9F3</color>
+    <color name="first">#505050</color>
+    <color name="second">#010101</color>
+
+
+    <color name="bankBg">#d4145a</color>
+    <color name="fastcashBg">#73c9e2</color>
+    <color name="reportBg">#4cdea5</color>
+    <color name="grey">#606060</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#F44336</color>
+    <color name="green">#4CAF50</color>
+
+    <color name="bg">#f9f9fb</color>
+    <color name="bg2">#ECEFF3</color>
+
+    <color name="bg_white">#F2F3F9</color>
+    <color name="rate_bg_grey">#F2F2F2</color>
+    <color name="bottom_nav_color">#333333</color>
+    <color name="one">#FCFDFD</color>
+
+</resources>

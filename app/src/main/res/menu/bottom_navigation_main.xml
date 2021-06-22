@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/general"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings"
+        android:title="General"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/security"
+        android:enabled="true"
+        android:icon="@drawable/ic_shield"
+        android:title="Security"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/info"
+        android:enabled="true"
+        android:icon="@drawable/ic_information"
+        android:title="Information"
+        app:showAsAction="ifRoom" />
+</menu>

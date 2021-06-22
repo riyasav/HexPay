@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.fragments.PersonalInfo" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".fragments.PersonalInfo">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline125"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline126"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.95" />
+
+
+            <TextView
+                android:id="@+id/textView40"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_bold"
+                android:text="User Registration"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+
+                app:layout_constraintBottom_toTopOf="@+id/guideline124"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline124"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.1" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:onClick="@{Clickers::onBackClicked}"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toTopOf="@+id/guideline124"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout18"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toTopOf="@+id/guideline124">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/usertype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="User Type"
+                    android:text="INDIVIDUAL"
+                    android:focusable="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout19"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout18">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="First Name"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout20"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout19">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Middle Name"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout21"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout20">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Last Name"
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout22"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout21">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline127"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout23"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline127"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout22">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:singleLine="true"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Mobile Number"
+                    android:drawableEnd="@drawable/dummy"
+                    android:maxEms="8"
+                    android:maxLength="8"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout24"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toEndOf="@+id/textInputLayout23"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout22">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="DOB"
+                    android:onClick="@{Clickers::onDobClicked}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout25"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/guideline127"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout23">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Gender"
+                    android:onClick="@{Clickers::onGenderClicked}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toEndOf="@+id/textInputLayout25"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="ID issued country"
+                    android:text="Oman"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout27"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="@{Clickers::onNationalityClicked}"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout25">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nationality"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Nationality"
+                    android:onClick="@{Clickers::onNationalityClicked}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout28"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline127"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout27">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Address 1"
+                    android:inputType="textPostalAddress"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline127"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout27">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/address2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Address 2"
+                    android:inputType="textPostalAddress"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout30"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout28">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Profession"
+                    android:onClick="@{Clickers::onProfessionClicked}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout31"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline127"
+                app:layout_constraintStart_toStartOf="@+id/guideline125"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout30">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/employer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Employer"
+                    android:drawableEnd="@drawable/dummy"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout32"
+                style="@style/Widget.Design.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline126"
+                app:layout_constraintStart_toStartOf="@+id/guideline127"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout30">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/salary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/down_white"
+                    android:focusable="false"
+                    android:fontFamily="@font/opensans_bold"
+                    android:hint="Salary per month"
+                    android:onClick="@{Clickers::onSalaryClicked}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <android.widget.Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/roundbutton"
+                android:onClick="@{Clickers::onProceedClicked}"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="@string/submit"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline127"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline127"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout32" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+

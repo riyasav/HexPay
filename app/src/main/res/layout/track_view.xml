@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/topround">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline85"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline86"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline87"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout11"
+            style="@style/Widget.Design.TextInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/toggler"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toBottomOf="@+id/textView31">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/refno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Reference Number"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <SeekBar
+            android:id="@+id/toggler"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_path"
+            android:hapticFeedbackEnabled="true"
+            android:progress="0"
+            android:progressDrawable="@android:color/transparent"
+            android:splitTrack="false"
+            android:thumb="@drawable/switch_thumb"
+            android:thumbOffset="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/submit"
+            app:layout_constraintEnd_toStartOf="@+id/guideline91"
+            app:layout_constraintStart_toStartOf="@+id/guideline90"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+
+        <android.widget.Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/roundbutton"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp"
+            android:text="Track"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/guideline88"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toBottomOf="@+id/toggler" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Payment Status"
+            android:textColor="@color/textColor"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/status"
+            app:layout_constraintEnd_toStartOf="@+id/status"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toTopOf="@+id/status" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline88"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toBottomOf="@+id/cor_status"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/status" />
+
+        <Button
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintTop_toTopOf="@+id/guideline88" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Correspondent Status"
+            android:textAlignment="textStart"
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toBottomOf="@+id/status" />
+
+        <TextView
+            android:id="@+id/cor_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="cor_status,textView25,status,textView26" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Bank"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/toggler"
+            app:layout_constraintEnd_toStartOf="@+id/guideline89"
+            app:layout_constraintStart_toStartOf="@+id/toggler"
+            app:layout_constraintTop_toTopOf="@+id/toggler" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="FastCash"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/toggler"
+            app:layout_constraintEnd_toEndOf="@+id/toggler"
+            app:layout_constraintStart_toStartOf="@+id/guideline89"
+            app:layout_constraintTop_toTopOf="@+id/toggler" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline89"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline91"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:text="Track payment status here."
+            android:textColor="@color/textColor"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline86"
+            app:layout_constraintStart_toStartOf="@+id/guideline85"
+            app:layout_constraintTop_toTopOf="@+id/guideline87" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

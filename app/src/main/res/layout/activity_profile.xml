@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="info"
+            type="io.thoughtbox.hamdan.model.profile.ProfileResponseData" />
+
+        <variable
+            name="Clickers"
+            type="io.thoughtbox.hamdan.views.Profile" />
+
+        <variable
+            name="Language"
+            type="io.thoughtbox.hamdan.global.Dictionary" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.Profile">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline176"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline176"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/displayPic"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/ic_frame"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline177"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView73"
+                    app:srcCompat="@drawable/ic_avatar" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@{info.fname +` `+info.lname}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline182"
+                    app:layout_constraintTop_toTopOf="@+id/displayPic" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{info.email}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline182"
+                    app:layout_constraintTop_toBottomOf="@+id/name" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline177"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.15" />
+
+                <TextView
+                    android:id="@+id/mobile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{info.contact}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline182"
+                    app:layout_constraintTop_toBottomOf="@+id/email" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline178"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.28" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline179"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline180"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <TextView
+                    android:id="@+id/textView71"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@{Language.get(`uploadedData`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toTopOf="@+id/guideline177" />
+
+                <ImageView
+                    android:id="@+id/imageView40"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    app:drawableTopCompat="@drawable/ic_add"
+                    android:onClick="@{Clickers::onFrontImageClicked}"
+                    app:layout_constraintBottom_toTopOf="@+id/textView81"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline185"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline182"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.35" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline183"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.65" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline184"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline185"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="20dp"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <ImageView
+                    android:id="@+id/imageView41"
+                    android:layout_width="90dp"
+                    android:layout_height="60dp"
+                    android:onClick="@{Clickers::onBackImageClicked}"
+                    app:layout_constraintBottom_toTopOf="@+id/textView82"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline185"
+                    app:layout_constraintTop_toBottomOf="@+id/textView71" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout51"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`address1`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout544">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+                        android:singleLine="true"
+                        android:inputType="textPostalAddress"
+                        android:text="@{info.city}"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout52"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`address2`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout51">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/address2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+
+                        android:inputType="textPostalAddress"
+                        android:singleLine="true"
+                        android:text="@{info.state}"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout542"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:hint="@{Language.get(`employerType`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline185"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout543">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/employerType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+
+                        android:singleLine="true"
+                        android:focusable="false"
+                        android:onClick="@{Clickers::onEmployerTypeClicked}"
+                        android:text="@{info.employertype}"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout534"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`employer`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline185"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout543">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/employer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+
+                        android:text="@{info.employer}"
+                        android:singleLine="true"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout54"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`profession`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout542">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/profession"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+
+                        android:text="@{info.profession}"
+                        android:onClick="@{Clickers::onProfessionClicked}"
+                        android:singleLine="true"
+                        android:focusable="false"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout549"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`salary`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout54">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+
+                        android:onClick="@{Clickers::onSalaryClicked}"
+                        android:singleLine="true"
+                        android:focusable="false"
+                        android:text="@{info.salary}"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout543"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`passportExpiry`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout541">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passportExpiry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+
+                        android:onClick="@{Clickers::onPassportExpired}"
+                        android:focusable="false"
+                        android:text="@{info.passportexpiry}"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout544"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:hint="@{Language.get(`idExpiry`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView75">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/id_expiry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+                        android:onClick="@{Clickers::onIdExpiryClicked}"
+                        android:focusable="false"
+                        android:inputType="date"
+                        android:text="@{info.idexpiry}"
+                        android:textSize="12sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout541"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@{Language.get(`passportNumber`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout52">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passportnumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/opensans_reg"
+                        android:text="@{info.passportno}"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/textView72"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@{Language.get(`userData`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toTopOf="@+id/guideline178" />
+
+                <TextView
+                    android:id="@+id/textView73"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@{Language.get(`profileDetails`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.widget.Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/roundbutton"
+                    android:onClick="@{Clickers::updateTextData}"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    android:text="@{Language.get(`update`)}"
+                    android:textColor="@color/grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/switch4" />
+
+                <TextView
+                    android:id="@+id/textView66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{Language.get(`countryOfBirth`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView72" />
+
+                <TextView
+                    android:id="@+id/textView75"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{info.countryofbirth}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline182"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView66" />
+
+                <TextView
+                    android:id="@+id/textView76"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{Language.get(`nationality`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline182"
+                    app:layout_constraintTop_toBottomOf="@+id/textView72" />
+
+                <TextView
+                    android:id="@+id/textView77"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{info.nationality}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline183"
+                    app:layout_constraintStart_toStartOf="@+id/guideline182"
+                    app:layout_constraintTop_toBottomOf="@+id/textView76" />
+
+                <TextView
+                    android:id="@+id/textView78"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{Language.get(`dateOfBirth`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline183"
+                    app:layout_constraintTop_toBottomOf="@+id/textView72" />
+
+                <TextView
+                    android:id="@+id/textView79"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{info.dob}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline183"
+                    app:layout_constraintTop_toBottomOf="@+id/textView78" />
+
+                <TextView
+                    android:id="@+id/textView86"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/opensans_reg"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView75" />
+
+
+                <TextView
+                    android:id="@+id/textView93"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{info.idno}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintBottom_toBottomOf="@+id/displayPic"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline182"
+                    app:layout_constraintTop_toBottomOf="@+id/mobile" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:text="@{Language.get(`sms`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView84" />
+
+                <TextView
+                    android:id="@+id/textView80"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/opensans_bold"
+                    android:text="@{Language.get(`consentTitle`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout549" />
+
+                <TextView
+                    android:id="@+id/textView84"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:text="@{Language.get(`consentBody`)}"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:text="@{Language.get(`email`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:text="@{Language.get(`call`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:checked="true"
+                    android:text="@{Language.get(`whatsapp`)}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179"
+                    app:layout_constraintTop_toBottomOf="@+id/switch3" />
+
+                <TextView
+                    android:id="@+id/textView81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:text="@{Language.get(`idFrontImage`)}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline178"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline185"
+                    app:layout_constraintStart_toStartOf="@+id/guideline179" />
+
+                <TextView
+                    android:id="@+id/textView82"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/opensans_reg"
+                    android:gravity="center"
+                    android:text="@{Language.get(`idBackImage`)}"
+                    android:textColor="@color/textColor"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline178"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
+                    app:layout_constraintStart_toStartOf="@+id/guideline185" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline176"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/textView74"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensans_bold"
+            android:text="@{Language.get(`myProfile`)}"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline176"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

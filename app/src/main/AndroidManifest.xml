@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.thoughtbox.hamdan">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera1"
+        android:required="false" />
+
+    <application
+        android:name="io.thoughtbox.hamdan.global.Universal"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="LockedOrientationActivity">
+        <activity android:name="io.thoughtbox.hamdan.views.ChangePassword"></activity>
+        <activity android:name="io.thoughtbox.hamdan.views.Profile" />
+        <activity android:name="io.thoughtbox.hamdan.views.branches.BranchPager" />
+        <activity android:name="io.thoughtbox.hamdan.views.SettingsGrid" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.remittance.TransferView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.addBen.AddBenCash"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.addBen.AddBenBank"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.Signup"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.CheckUser"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.Feedback"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.Policy"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.PushNotifications"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.ManageBiometric"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.Language"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.utls.VideoRecording"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.utls.AppUpdate"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.views.Rates"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.receipts.Report"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.receipts.PaymentReceipt"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.transfers.PaymentGateWay"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.transfers.CashPickUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.transfers.BankTransfer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.DashBoard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="io.thoughtbox.hamdan.SplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name="io.thoughtbox.hamdan.utls.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+           See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_thumb_logo" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/white" /> <!-- [END fcm_default_icon] -->
+        <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" /> <!-- Broadcast receiver declaration in manifest file and make sure to enable it -->
+        <receiver android:name="io.thoughtbox.hamdan.utls.NetworkChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
