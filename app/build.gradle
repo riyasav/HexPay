@@ -79,6 +79,7 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.3'
     implementation 'androidx.print:print:1.0.0'
 
+
     implementation 'com.github.livechat:chat-window-android:v2.0.4'
 
     implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'

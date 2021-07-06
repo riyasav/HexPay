@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Al Jadeed</string>
+    <string name="app_name">HexPay</string>
 
     <string name="verification">Verify your account</string>
     <string name="otp_message">Provide the OTP we shared to your registered mobile number.</string>

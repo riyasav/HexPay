@@ -485,7 +485,7 @@
                                 android:gravity="center"
                                 android:onClick="@{Clickers::onCashPickUpClicked}"
                                 android:singleLine="true"
-                                android:text="@{Language.get(`cashPickup`)}"
+                                android:text="@{Language.get(`cashPickUp`)}"
                                 android:textColor="@color/textColor"
                                 android:textSize="12sp"
                                 app:drawableTopCompat="@drawable/ic_cash_pickup"

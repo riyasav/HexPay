@@ -3,10 +3,10 @@
     xmlns:aapt="http://schemas.android.com/aapt" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:pathData="M0,0h1080v1920h-1080z">
         <aapt:attr name="android:fillColor">
-            <gradient android:endX="687.48" android:endY="1258.62"
+            <gradient android:endX="687.48" android:endY="2000.62"
                 android:startX="209.24" android:startY="290.27" android:type="linear">
-                <item android:color="#FFFCEE21" android:offset="0"/>
-                <item android:color="#FFFFFFFF" android:offset="0.92"/>
+                <item android:color="#ee2935" android:offset="0"/>
+                <item android:color="#FFFFFFFF" android:offset="1"/>
                 <item android:color="#FFFFFFFF" android:offset="1"/>
             </gradient>
         </aapt:attr>

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -28,6 +29,7 @@ import java.util.HashMap;
 
 import javax.inject.Inject;
 
+import io.thoughtbox.hamdan.model.loginModel.Otp;
 import io.thoughtbox.hamdan.utls.ConnectionLiveData;
 import io.thoughtbox.hamdan.utls.FingerAuthentication;
 import io.thoughtbox.hamdan.utls.FingerIdentification;
@@ -44,8 +46,10 @@ import io.thoughtbox.hamdan.model.dictionaryModel.DictionaryResponseData;
 import io.thoughtbox.hamdan.model.loginModel.LoginRequestModel;
 import io.thoughtbox.hamdan.model.loginModel.OtpRequestModel;
 import io.thoughtbox.hamdan.viewModel.LoginViewModel;
+import io.thoughtbox.hamdan.viewModel.OtpViewModel;
 import io.thoughtbox.hamdan.views.ChangePassword;
 import io.thoughtbox.hamdan.views.CheckUser;
+import io.thoughtbox.hamdan.views.SettingsGrid;
 
 public class MainActivity extends AppCompatActivity implements FingerAuthentication {
 
@@ -57,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
     private LoginRequestModel requestModel;
     private HashMap<String, String> dictMap = new HashMap<>();
     private OtpViewHandler otpViewHandler;
+    private OtpViewModel otpViewModel;
+    private SettingsGrid settingsGrid;
     private NotificationAlerts alerts;
     private boolean isSensorActive, isChangePressed = false;
     private FingerIdentification fingerprintSensor;
@@ -109,6 +115,19 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
                 }
             }
         });
+
+//        LiveData<Boolean> isLoaderData= otpViewModel.getIsLoading();
+//        isLoaderData.observe(this,isLoader-> {
+//
+//            if (isLoader) {
+//                progressDialog.show();
+//                Log.d("Loader", "stated new loader");
+//            } else {
+//                progressDialog.dismiss();
+//                Log.d("Loader", "stopped a loader");
+//            }
+//
+//        });
 
 
         LiveData<String> getOtp = otpViewHandler.otpLiveData;
@@ -166,6 +185,7 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         mainBinding.setLanguage(dictionary);
 
         loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+        otpViewModel = new ViewModelProvider(this).get(OtpViewModel.class);
         otpViewHandler = new OtpViewHandler(mainBinding, this);
         ipAddress = IPCapture.getIPAddress(true);
         Loader loader = new Loader(this);
@@ -345,6 +365,8 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
             doAnimateTransaction(mainBinding.bioLogin.view, mainBinding.credLogin.loginView);
         }
 
+
+
         public void onLoginClicked(View view) {
             doLogin();
         }
@@ -362,6 +384,19 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
 
         public void onForgotPassword(View view) {
             showForgotPasswordDialog();
+        }
+
+        public void onLocatedBranchClicked(View view){
+            Toast.makeText(MainActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
+        }
+
+        public void onCallUsClicked(View view){
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "+968-95-770895", null));
+            startActivity(intent);
+        }
+
+        public void onCheckRatesClicked(View view){
+            Toast.makeText(MainActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
         }
 
 

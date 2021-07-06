@@ -3,8 +3,12 @@ package io.thoughtbox.hamdan.views.remittance;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -74,6 +78,7 @@ public class TransferView extends AppCompatActivity implements SelectionListener
     private boolean isBank = false;
     private String Amount = "0.00";
     private Dialog progressDialog;
+    TextView termsAndCondition;
     private String modeCode, isPaymentGateWay;
     private String costrate, userRate, servicecharge, sessionid,agentsessionid;
     private NotificationAlerts alerts;
@@ -142,7 +147,7 @@ public class TransferView extends AppCompatActivity implements SelectionListener
             if (!isRepeat) {
                 for (int i = 0; i < sourceList.size(); i++) {
                     String name = sourceList.get(i).getName();
-                    if (name.toUpperCase().contains("SALARY")) {
+                    if (name.toUpperCase().contains("SALARY")){
                         binding.source.setText(sourceList.get(i).getName());
                         sourceId = sourceList.get(i).getId();
                     }
@@ -204,6 +209,7 @@ public class TransferView extends AppCompatActivity implements SelectionListener
                 Toast.makeText(this, "Otp resend failed", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     private void init() {
@@ -217,6 +223,7 @@ public class TransferView extends AppCompatActivity implements SelectionListener
         Intent intent = getIntent();
         isRepeat = intent.getBooleanExtra("fromReport", false);
         isBank = intent.getBooleanExtra("isBank", false);
+        termsAndCondition=binding.termsAndCondition;
         if (intent.hasExtra("Bank")) {
             txnType = "Aim2Bank";
             responseData = (BankBeneficiaryResponseData) intent.getSerializableExtra("Bank");
@@ -276,6 +283,11 @@ public class TransferView extends AppCompatActivity implements SelectionListener
         transferViewModel.getBanks();
         transferViewModel.getPurposes();
         transferViewModel.getSources();
+
+         SpannableStringBuilder sb = new SpannableStringBuilder("By clicking submit you agree to the Terms and Conditions");
+         StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD); // Span to make text bold
+        sb.setSpan(bss, 35, 56, Spannable.SPAN_INCLUSIVE_INCLUSIVE); // make first 4 characters Bold
+        termsAndCondition.setText(sb);
     }
 
     private void navigateToPaymentWindow() {

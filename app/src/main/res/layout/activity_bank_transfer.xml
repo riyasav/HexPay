@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/white"
         tools:context=".transfers.BankTransfer">
 
         <androidx.constraintlayout.widget.Guideline
@@ -59,7 +59,7 @@
             android:fontFamily="@font/opensans_bold"
             android:gravity="center"
             android:text="@{Language.get(`bankBen`)}"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline25"
             app:layout_constraintEnd_toStartOf="@+id/guideline24"

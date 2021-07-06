@@ -2,9 +2,11 @@ package io.thoughtbox.hamdan.global;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
-import androidx.databinding.library.baseAdapters.BR;
+//import androidx.databinding.library.baseAdapters.BR;
 
 import java.util.HashMap;
+
+import io.thoughtbox.hamdan.BR;
 
 public class Dictionary extends BaseObservable {
 

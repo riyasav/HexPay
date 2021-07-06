@@ -152,18 +152,7 @@
             app:layout_constraintTop_toTopOf="@+id/animate_view"
             app:layout_constraintVertical_bias="0.40" />
 
-        <TextView
-            android:id="@+id/textView63"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:text="@{Language.getTemp(`login`)}"
-            android:fontFamily="@font/roboto_bold"
-            android:gravity="center"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-            app:layout_constraintEnd_toStartOf="@+id/guideline61"
-            app:layout_constraintStart_toStartOf="@+id/guideline60"
-            app:layout_constraintTop_toBottomOf="@+id/animate_view" />
+
 
         <LinearLayout
             android:layout_width="0dp"
@@ -183,6 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="@{Clickers::onLocatedBranchClicked}"
                 android:drawablePadding="5dp"
                 android:text="Locate Branch"
                 app:drawableTopCompat="@drawable/ic_locateus" />
@@ -193,6 +183,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="@{Clickers::onCallUsClicked}"
                 android:drawablePadding="5dp"
                 android:text="Call Us"
                 app:drawableTopCompat="@drawable/ic_callus" />
@@ -203,6 +194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:onClick="@{Clickers::onCheckRatesClicked}"
                 android:drawablePadding="5dp"
                 android:text="Check Rates"
                 app:drawableTopCompat="@drawable/ic_userrates" />

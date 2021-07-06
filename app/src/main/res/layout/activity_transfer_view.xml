@@ -22,7 +22,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/bg_white"
             tools:context=".views.remittance.TransferView">
 
             <androidx.constraintlayout.widget.Guideline
@@ -66,7 +66,7 @@
                 android:layout_marginEnd="40dp"
                 android:fontFamily="@font/opensans_bold"
                 android:text="@{Language.get(`transfer`)}"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline140"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
@@ -80,10 +80,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                app:boxStrokeColor="@color/white"
-                android:textColorHint="@color/white"
-                app:hintTextColor="@color/white"
                 android:hint="@{Language.get(`amount`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline143"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
                 app:layout_constraintTop_toBottomOf="@+id/cardView2">
@@ -103,10 +103,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`currency`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="@+id/textInputLayout39"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintStart_toStartOf="@+id/guideline143"
@@ -120,7 +120,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/opensans_bold"
                     android:onClick="@{Clickers::onCurrencyClicked}"
-                     android:textColor="@color/black"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,10 +129,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`mode`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
@@ -146,7 +146,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/opensans_bold"
                     android:onClick="@{Clickers::onModeClicked}"
-                     android:textColor="@color/black"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -155,8 +155,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`bank`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout41">
@@ -169,7 +171,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/opensans_bold"
                     android:onClick="@{Clickers::onBankClicked}"
-                     android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,8 +180,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`refno`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout47">
@@ -190,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/opensans_bold"
                     android:inputType="text"
-                     android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -206,10 +210,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`source`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
@@ -223,7 +227,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/opensans_bold"
                     android:onClick="@{Clickers::onSourceClicked}"
-                     android:textColor="@color/black"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -232,10 +236,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`purpose`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout42">
@@ -248,7 +252,7 @@
                     android:focusable="false"
                     android:fontFamily="@font/opensans_bold"
                     android:onClick="@{Clickers::onPurposeClicked}"
-                     android:textColor="@color/black"
+                    android:textColor="@color/black"
                     android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -265,18 +269,28 @@
                 android:id="@+id/submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:background="@drawable/roundbutton"
                 android:onClick="@{Clickers::onSubmitClicked}"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:text="@{Language.get(`submit`)}"
-                android:textColor="@color/grey"
                 android:textAllCaps="false"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/grey"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/guideline141"
+                app:layout_constraintTop_toBottomOf="@+id/termsAndCondition" />
+
+            <TextView
+                android:id="@+id/termsAndCondition"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout46" />
 
@@ -305,7 +319,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@{Language.get(`transferType`)}"
-                         android:textColor="@color/colorAccent"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -322,7 +336,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:textColor="@color/textColor2"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline144"
@@ -344,7 +358,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@{Language.get(`beneficiaryName`)}"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView48" />
@@ -357,7 +371,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@{Language.get(`accountNumber`)}"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView50" />
@@ -367,7 +381,6 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-
                         android:ellipsize="marquee"
                         android:focusable="true"
                         android:focusableInTouchMode="true"
@@ -375,7 +388,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:textColor="@color/textColor2"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline144"
@@ -389,7 +402,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@{Language.get(`bank`)}"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/address" />
@@ -403,7 +416,7 @@
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/opensans_bold"
                         android:text="@{Language.get(`branch`)}"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -421,7 +434,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:textColor="@color/textColor2"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline144"
@@ -439,7 +452,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:textColor="@color/textColor2"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/guideline144"
@@ -458,7 +471,7 @@
                         android:marqueeRepeatLimit="marquee_forever"
                         android:scrollHorizontally="true"
                         android:singleLine="true"
-                        android:textColor="@color/textColor2"
+                        android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -472,10 +485,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:boxStrokeColor="@color/white"
-                app:hintTextColor="@color/white"
-                android:textColorHint="@color/white"
                 android:hint="@{Language.get(`offerCode`)}"
+                android:textColorHint="@color/black"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/guideline142"
                 app:layout_constraintStart_toStartOf="@+id/guideline141"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout45">
@@ -484,13 +497,14 @@
                     android:id="@+id/offercode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
                     android:fontFamily="@font/opensans_bold"
-                     android:textColor="@color/black"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/black"
                     android:textColorHint="@color/white"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

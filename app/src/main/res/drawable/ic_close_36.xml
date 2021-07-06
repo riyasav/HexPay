@@ -3,7 +3,8 @@
     android:height="40dp"
     android:autoMirrored="true"
     android:viewportWidth="20.41"
-    android:viewportHeight="20.41">
+    android:viewportHeight="20.41"
+    android:tint="@color/white">
     <path
         android:fillColor="@color/bottom_nav_color"
         android:pathData="M7.18,13.21a0.48,0.48 0,0 0,0.67 0l5.38,-5.33a0.48,0.48 0,0 0,-0.67 -0.68L7.18,12.53A0.48,0.48 0,0 0,7.18 13.21Z" />

@@ -60,6 +60,8 @@ public class SplashScreen extends AppCompatActivity {
 
     private FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,8 @@ public class SplashScreen extends AppCompatActivity {
 
         checkAutoUpdate();
         init();
+
+
 //        checkExistingUser();
 //        checkUserLanguage();
         LiveData<ArrayList<DictionaryResponseData>> getDictionaryLiveData = splashViewModel.getDictionaryLiveData();

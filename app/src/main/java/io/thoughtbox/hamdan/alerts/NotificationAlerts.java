@@ -45,7 +45,7 @@ public class NotificationAlerts {
 
     public void errorDialog(String msg) {
         mBottomSheetDialog = new BottomSheetDialog(context, R.style.BottomSheetDialog);
-        ErrorDialogBinding dialogBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.error_dialog, null, false);
+        ErrorDialogBinding dialogBinding = DataBindingUtil.inflate(LayoutInflater.from(context),R.layout.error_dialog, null, false);
         dialogBinding.setClickers(clicksBind);
         mBottomSheetDialog.setContentView(dialogBinding.getRoot());
         mBottomSheetDialog.setCancelable(true);
