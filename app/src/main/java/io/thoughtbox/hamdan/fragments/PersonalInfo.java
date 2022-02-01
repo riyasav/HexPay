@@ -52,13 +52,10 @@ public class PersonalInfo extends Fragment implements SelectionListener {
     private ArrayList<SelectionModal> salaryList;
     private ArrayList<SelectionModal> userTypeList;
     private ArrayList<SelectionModal> genderList;
-
     private Calendar myCalendar = Calendar.getInstance();
     private DatePickerDialog.OnDateSetListener dobDate;
-
     private Dialog progressDialog;
     private BottomLists bottomLists;
-
     private String professionId;
     private String salaryId;
     private String userType;
@@ -215,7 +212,7 @@ public class PersonalInfo extends Fragment implements SelectionListener {
     }
 
     public void onDobClicked(View view) {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(getContext()), dobDate, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        DatePickerDialog datePickerDialog = new DatePickerDialog(requireContext(), dobDate, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.getDatePicker().setMaxDate(currentDateTime - 568025136000L);
 
         datePickerDialog.show();
@@ -266,7 +263,7 @@ public class PersonalInfo extends Fragment implements SelectionListener {
             Signup.userData.put("salary", salaryId);
 
                 IDFragment idFragment = new IDFragment();
-                FragmentManager fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+                FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container, idFragment).addToBackStack(null);
                 fragmentTransaction.commit();

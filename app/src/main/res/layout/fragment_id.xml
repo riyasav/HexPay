@@ -202,6 +202,7 @@
                 android:id="@+id/video_view"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
+                android:backgroundTint="#f7f4f4"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline130"
                 app:layout_constraintStart_toStartOf="@+id/guideline129"
@@ -235,9 +236,10 @@
                 android:src="@drawable/ic_play"
                 app:layout_constraintBottom_toBottomOf="@+id/video_view"
                 app:layout_constraintEnd_toStartOf="@+id/guideline130"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideline129"
                 app:layout_constraintTop_toTopOf="@+id/video_view"
-                app:layout_constraintVertical_bias="0.5" />
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

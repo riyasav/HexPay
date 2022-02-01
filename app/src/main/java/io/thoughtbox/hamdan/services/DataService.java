@@ -4,6 +4,8 @@ package io.thoughtbox.hamdan.services;
 import com.google.gson.JsonObject;
 
 import io.reactivex.Observable;
+import io.thoughtbox.hamdan.model.BannerModel;
+import io.thoughtbox.hamdan.model.BannerResponse;
 import io.thoughtbox.hamdan.model.DateTimeResponse;
 import io.thoughtbox.hamdan.model.FileUploadResponse;
 import io.thoughtbox.hamdan.model.bankBenModel.BankBeneficiaryResponse;
@@ -361,4 +363,7 @@ public interface DataService {
     @GET("usercontrol/getbyidnomin/{id}")
     Observable<ProfileResponse> getProfileData(@Header("Authorization") String token,
                                                @Path("id") String userId);
+
+    @GET("common/getapplicationstartmessage")
+    Observable<BannerModel> getBannerResult();
 }

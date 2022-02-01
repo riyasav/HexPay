@@ -439,9 +439,12 @@ public class DashBoard extends AppCompatActivity implements  SelectionListener {
 
     private void setRateAndCurrency(String name) {
         ArrayList<CurrencyRateModel> ratesList;
+
         String nationalityCurrencyCode = Universal.getInstance().getLoginResponsedata().getNationalitycurrencycode().toUpperCase();
         if (!nationalityCurrencyCode.equals(countryCurrencyCode)) {
+            // all list based on transferType
             ratesList = filterRatesByTxnTypes(name);
+            // get all rate and code from the above list
             currencyList = getCurrencyListFromRateList(ratesList);
             CurrencyRateModel currencyDetails = getCurrencyCodeFromList(ratesList, nationalityCurrencyCode);
             selectedCurrencyRate = currencyDetails.getCurrencyRate();

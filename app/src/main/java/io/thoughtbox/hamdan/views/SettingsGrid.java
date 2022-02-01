@@ -305,20 +305,20 @@ public class SettingsGrid extends AppCompatActivity {
             startActivity(intent);
         }
 
-        public void onTermsClicked(View view) {
-//            Intent intent = new Intent(getApplicationContext(), Policy.class);
-//            intent.putExtra("url", Constants.Terms);
-//            intent.putExtra("title", dictionary.get("termsCondition"));
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//            startActivity(intent);
+        public void onTermsClicked(View view){
+            Intent intent = new Intent(getApplicationContext(), Policy.class);
+            intent.putExtra("url", Constants.Terms);
+            intent.putExtra("title", dictionary.get("termsCondition"));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
 
         public void onPrivacyClicked(View view) {
-//            Intent intent = new Intent(getApplicationContext(), Policy.class);
-//            intent.putExtra("url", Constants.Privacy);
-//            intent.putExtra("title", dictionary.get("privacyPolicy"));
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), Policy.class);
+            intent.putExtra("url", Constants.Privacy);
+            intent.putExtra("title", dictionary.get("privacyPolicy"));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
 
         public void onHelpClicked(View view) {
@@ -326,11 +326,11 @@ public class SettingsGrid extends AppCompatActivity {
         }
 
         public void onFaqClicked(View view) {
-//            Intent intent = new Intent(getApplicationContext(), Policy.class);
-//            intent.putExtra("url", Constants.Faq);
-//            intent.putExtra("title", dictionary.get("faq"));
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), Policy.class);
+            intent.putExtra("url", Constants.Faq);
+            intent.putExtra("title", dictionary.get("faq"));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
 
         public void onCustomerSupportClicked(View view) {
@@ -343,9 +343,9 @@ public class SettingsGrid extends AppCompatActivity {
         }
 
         public void onFeedbackClicked(View view) {
-//            Intent intent = new Intent(getApplicationContext(), Feedback.class);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//            startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), Feedback.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
 
         public void onBackClicked(View view) {

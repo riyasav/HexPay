@@ -49,7 +49,9 @@ import io.thoughtbox.hamdan.viewModel.LoginViewModel;
 import io.thoughtbox.hamdan.viewModel.OtpViewModel;
 import io.thoughtbox.hamdan.views.ChangePassword;
 import io.thoughtbox.hamdan.views.CheckUser;
+import io.thoughtbox.hamdan.views.RateChecker;
 import io.thoughtbox.hamdan.views.SettingsGrid;
+import io.thoughtbox.hamdan.views.branches.BranchPager;
 
 public class MainActivity extends AppCompatActivity implements FingerAuthentication {
 
@@ -78,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         LiveData<ArrayList<DictionaryResponseData>> liveDictObj = loginViewModel.getDictionaryLiveData();
         liveDictObj.observe(this, dictionaryResponsesList -> {
 
-            for (DictionaryResponseData dictionaryResponse : dictionaryResponsesList) {
+            for (DictionaryResponseData dictionaryResponse : dictionaryResponsesList){
                 dictMap.put(dictionaryResponse.getItem(), dictionaryResponse.getValue());
                 Dictionary.getInstance().setLangMap(dictMap);
             }
@@ -387,16 +389,20 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         }
 
         public void onLocatedBranchClicked(View view){
-            Toast.makeText(MainActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, BranchPager.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
 
         public void onCallUsClicked(View view){
-            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "+968-95-770895", null));
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", "+968-23-211258", null));
             startActivity(intent);
         }
 
         public void onCheckRatesClicked(View view){
-            Toast.makeText(MainActivity.this, "Coming soon", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, RateChecker.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
         }
 
 

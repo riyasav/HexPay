@@ -105,7 +105,7 @@ public class IPCapture {
                         //boolean isIPv4 = InetAddressUtils.isIPv4Address(sAddr);
                         boolean isIPv4 = sAddr.indexOf(':')<0;
 
-                        if (useIPv4) {
+                        if (useIPv4){
                             if (isIPv4)
                                 return sAddr;
                         } else {

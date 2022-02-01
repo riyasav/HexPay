@@ -3,7 +3,8 @@ package io.thoughtbox.hamdan.utls;
 public interface Constants {
 
 
-    String BaseURL = "https://uatapi.hamdanexchange.com/";
+//    String BaseURL = "https://uatapi.hamdanexchange.com/";
+    String BaseURL = "https://ilxapi.hamdanexchange.com/";
 
 //    String BaseURL = "https://ilxapijadeed.thoughtbox.io/";
 
@@ -19,11 +20,11 @@ public interface Constants {
 
     int CAMERA_CAPTURE_VIDEO_REQUEST_CODE = 201;
 
-    String Terms = "https://www.thoughtbox.io/AlJadeedExT&C.html";
+    String Terms = "https://hamdanexchange.com/Terms_and_Conditions.html";
 
-    String Privacy = "https://www.thoughtbox.io/AlJadeedExPrivacyPolicy.html";
+    String Privacy = "https://hamdanexchange.com/Privacy_Policy.html";
 
-    String Faq = "https://www.thoughtbox.io/AlJadeedExFAQ.html";
+    String Faq = "https://hamdanexchange.com/FAQ.html";
 
     String Support = "https://aljadeedexchange.org/#contactus";
 

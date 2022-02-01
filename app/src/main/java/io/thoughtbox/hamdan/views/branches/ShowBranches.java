@@ -97,7 +97,7 @@ public class ShowBranches extends Fragment implements OnMapReadyCallback, Locati
 
     private void getBranches() {
         locationList = new ArrayList<>();
-//        locationList.add(new Data("SALALAH MAIN - HEADOFFICE", 23.5935453571482, 58.4269483147075, "Hamdan Complex, Robat Road,Salalah","23211258"));
+        locationList.add(new Data("SALALAH MAIN - HEADOFFICE", 17.01979706, 54.06125204, "Hamdan Complex, Robat Road,Salalah","23211258"));
         locationList.add(new Data("SALALAH SALAM STREET", 17.01334991, 54.09430833, "Salalah Salam Street, Salalah Souq,Salalah", "23296904"));
         locationList.add(new Data("Muscat-Ruwi", 23.58941517, 58.54562511, "Ruwi High-Street,Muscat", "24832801"));
         locationList.add(new Data("KHABOURA", 23.97172965, 57.0912932, "Main Round About,Khaboura", "26801246"));
@@ -107,23 +107,23 @@ public class ShowBranches extends Fragment implements OnMapReadyCallback, Locati
         locationList.add(new Data("BURAIMI", 24.25542518, 55.76926922, "Near Safeer Market, Power House Road,Al Buraimi", "25652688"));
         locationList.add(new Data("KHADRA", 23.85876118, 57.32957156, "Opposite Bank Muscat,Khadra", "26172210"));
         locationList.add(new Data("THARMAD", 23.78731955, 57.5200469, "Near Al Ain Centre,Tharmad", "26810115"));
-//        locationList.add(new Data("GHALA", 23.745632, 57.621987, "Near Sultan Qaboos Mosque Signal, Ghala Bausher,Ghala", "24527444"));
-//        locationList.add(new Data("AL HAIL", 24.423306, 56.611295, "Near Zam Zam Hyper Market, Al Hail north,Al Hail", "24184377"));
-//        locationList.add(new Data("AL KAMIL", 22.716864, 58.528204, "Near Bank Dhofar,Al Kamil", "25558444"));
+        locationList.add(new Data("GHALA", 23.58131313, 58.38095807, "Near Sultan Qaboos Mosque Signal, Ghala Bausher,Ghala", "24527444"));
+        locationList.add(new Data("AL HAIL", 23.62859891, 58.2328284, "Near Zam Zam Hyper Market, Al Hail north,Al Hail", "24184377"));
+        locationList.add(new Data("AL KAMIL", 22.2246951, 59.19438325, "Near Bank Dhofar,Al Kamil", "25558444"));
         locationList.add(new Data("LIWA", 24.51900985, 56.56347674, "Near Round About New Liwa,Liwa", "26762673"));
         locationList.add(new Data("QURIYAT ", 23.261042, 58.91544864, "Near Oman Arab Bank,Souk road,Quriyat", "24847755"));
         locationList.add(new Data("NAKHAL", 23.40876079, 57.82018198, "Near Bank Muscat,Nakhal", "26781269"));
-//        locationList.add(new Data("MAHOUT", 23.40876079, 57.543565, "Near Shell Petrol Pump,Mahout", "25427226"));
-//        locationList.add(new Data("YANQUL", 22.828889, 55.321167, "Near Bank Dhofar,Yanqul", "25672466"));
+        locationList.add(new Data("MAHOUT", 20.76578812,58.28727187, "Near Shell Petrol Pump,Mahout", "25427226"));
+        locationList.add(new Data("YANQUL", 23.59268973, 56.55184898, "Near Bank Dhofar,Yanqul", "25672466"));
         locationList.add(new Data("MABELLA II", 23.64079028, 58.09944846, "Adjacent to Babil Hypermarket,Mabellah", "24052549"));
         locationList.add(new Data("FALAJ AL QABAIL", 24.4374317, 56.6077423, "Near Al Maha Petrol Pump,Falaj Al Qabail", "26750690"));
-//        locationList.add(new Data("SALALAH SANAYAH", 17.012751, 54.093058, "Sanaya GTC Road, Near Mosque,Salalah Sanaya", "23229922"));
-//        locationList.add(new Data("BAHLA", 17.017278, 54.100705, "Al Karama Hypermarket,Bahla", "25225978"));
+        locationList.add(new Data("SALALAH SANAYAH", 17.02218261, 54.05131538, "Sanaya GTC Road, Near Mosque,Salalah Sanaya", "23229922"));
+        locationList.add(new Data("BAHLA", 22.94788468, 57.27496956, "Al Karama Hypermarket,Bahla", "25225978"));
         locationList.add(new Data("GADFHAN", 24.4639897, 56.6052961, "Near Al Wafa Commercial Centre,Gadhfan","26762507"));
-//        locationList.add(new Data("AL KHOUD", 17.049326, 54.087256, "Near Babil Hypermarket & Red Tag, Al Khoud Souq,Al Khoud", "26762507"));
+        locationList.add(new Data("AL KHOUD", 23.63234182, 58.19924997, "Near Babil Hypermarket & Red Tag, Al Khoud Souq,Al Khoud", "26762507"));
         locationList.add(new Data("OUHI", 24.38374175, 56.6466185, "Near Al Majeesco Shopping centre,Ouhi Sanaya", "26647115"));
-//        locationList.add(new Data("GARDENS MALL", 18.179388, 55.20315, "Inside Salalah Gardens Mall, Salalah city,Salalah ", "23284420"));
-//        locationList.add(new Data("MAWALEH", 17.8435523, 52.663322, "Opposite to Mawaleh vegetable market,Mawaleh", "24075066"));
+        locationList.add(new Data("GARDENS MALL", 17.02428166, 54.06637614, "Inside Salalah Gardens Mall, Salalah city,Salalah ", "23284420"));
+        locationList.add(new Data("MAWALEH", 23.59455084, 58.22512598, "Opposite to Mawaleh vegetable market,Mawaleh", "24075066"));
         locationList.add(new Data("MABELLAH-4", 23.65771292, 58.0993617, "Near Mehmood Masjid,Mabelah 4", "24266683"));
         locationList.add(new Data("SAADAH", 17.05164958, 54.15573353, "Near to bank muscat ,Al mashoor super market way,Saadah", "24857578"));
 
@@ -276,7 +276,7 @@ public class ShowBranches extends Fragment implements OnMapReadyCallback, Locati
     }
 
     private void makePhoneCall(String customerCareNumber) {
-        if (ContextCompat.checkSelfPermission(Objects.requireNonNull(getContext()),
+        if (ContextCompat.checkSelfPermission(requireContext(),
                 Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 105);
         } else {

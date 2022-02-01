@@ -154,6 +154,7 @@ public class PaymentReceipt extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1) {
             if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 shareData.share(binding.card, "Payment Receipt", "Share Receipt");
@@ -190,13 +191,13 @@ public class PaymentReceipt extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    protected void onDestroy(){
         super.onDestroy();
         invoiceViewModel.clear();
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed(){
         super.onBackPressed();
         Intent intent = new Intent(this, DashBoard.class);
         startActivity(intent);

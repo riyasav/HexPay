@@ -1,10 +1,14 @@
 package io.thoughtbox.hamdan.repos;
 
+import android.os.Build;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -52,6 +56,9 @@ public class LoginRepo {
     private MutableLiveData<Boolean> languageUpdateLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> isDeviceTokenUpdated = new MutableLiveData<>();
     private MutableLiveData<Boolean> resendOtpLiveData = new MutableLiveData<>();
+
+    private FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
+
 
     public LoginRepo() {
         DaggerApiComponents.create().inject(this);
@@ -305,7 +312,6 @@ public class LoginRepo {
         return languageUpdateLiveData;
     }
 
-    /////////////////////////////////////////////////
 
     public void verifyOtp(OtpRequestModel requestParams) {
         isLoading.postValue(true);
@@ -323,14 +329,16 @@ public class LoginRepo {
                         if (otp.getResponsestatus().toUpperCase().equals("TRUE")) {
                             if (otp.getResponsedata().getResult().toUpperCase().equals("TRUE")) {
                                 isLoading.postValue(false);
-//                                isOtpValidated.setValue(true);
-                                getFCMToken();
+                                if (Build.MANUFACTURER.toUpperCase().trim().equals("HUAWEI")) {
+                                    isDeviceTokenUpdated.setValue(true);
+
+                                } else {
+                                    getFCMToken();
+                                }
                             } else {
                                 isLoading.postValue(false);
                                 loadingError.postValue(otp.getResponsedata().getResult());
                             }
-
-
                         } else {
 //                            isOtpValidated.setValue(false);
                             isLoading.postValue(false);

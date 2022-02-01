@@ -22,7 +22,7 @@ public class ServiceRequest {
         return instance;
     }
 
-    public DataService getDataService() {
+    public DataService getDataService(){
         return dataService;
     }
 }

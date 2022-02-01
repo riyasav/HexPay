@@ -33,7 +33,7 @@ public class PaymentGateWay extends AppCompatActivity {
     private String transfer_type, refNum;
     private Dialog progressDialog;
 
-    private String url_to_check = "https://ilxapijadeed.thoughtbox.io/transferconfirmation.html";
+    private String url_to_check = "https://www.thoughtbox.io/transferconfirmation.html";
     private NotificationAlerts alerts;
 
     @Override

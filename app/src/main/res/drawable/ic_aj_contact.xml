@@ -10,8 +10,8 @@
         android:strokeColor="#000"/>
     <path
         android:pathData="M63,25.06l-8.72,-6.64a0.34,0.34 0,0 0,-0.55 0.27V32a0.34,0.34 0,0 0,0.55 0.26L63,25.59A0.34,0.34 0,0 0,63 25.06Z"
-        android:fillColor="#fed604"/>
+        android:fillColor="@color/red"/>
     <path
         android:pathData="M46.94,23.57h6.9a1.83,1.83 0,0 1,1.83 1.83v0.13a1.83,1.83 0,0 1,-1.83 1.83h-6.9a1.83,1.83 0,0 1,-1.83 -1.83V25.4a1.83,1.83 0,0 1,1.83 -1.83"
-        android:fillColor="#fed604"/>
+        android:fillColor="@color/red"/>
 </vector>

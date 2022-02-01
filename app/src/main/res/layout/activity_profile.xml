@@ -57,7 +57,6 @@
                     android:padding="5dp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline177"
                     app:layout_constraintStart_toStartOf="@+id/guideline179"
-                    app:layout_constraintTop_toBottomOf="@+id/textView73"
                     app:srcCompat="@drawable/ic_avatar" />
 
                 <TextView
@@ -411,18 +410,18 @@
                     app:layout_constraintStart_toStartOf="@+id/guideline179"
                     app:layout_constraintTop_toTopOf="@+id/guideline178" />
 
-                <TextView
-                    android:id="@+id/textView73"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/opensans_bold"
-                    android:text="@{Language.get(`profileDetails`)}"
-                    android:textColor="@color/textColor"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline180"
-                    app:layout_constraintStart_toStartOf="@+id/guideline179"
-                    app:layout_constraintTop_toTopOf="parent" />
+<!--                <TextView-->
+<!--                    android:id="@+id/textView73"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:fontFamily="@font/opensans_bold"-->
+<!--                    android:text="@{Language.get(`profileDetails`)}"-->
+<!--                    android:textColor="@color/textColor"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/guideline180"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/guideline179"-->
+<!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
                 <android.widget.Button
                     android:id="@+id/button4"
@@ -661,7 +660,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/opensans_bold"
-            android:text="@{Language.get(`myProfile`)}"
+            android:text="@{Language.get(`profileDetails`)}"
             android:textColor="@color/textColor"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline176"

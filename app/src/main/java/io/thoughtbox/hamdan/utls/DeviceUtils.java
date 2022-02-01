@@ -30,7 +30,7 @@ public class DeviceUtils {
     }
 
     public static boolean isRootAvailable() {
-        for (String pathDir : System.getenv("PATH").split(":")) {
+        for (String pathDir : System.getenv("PATH").split(":")){
             if (new File(pathDir, "su").exists()) {
                 return true;
             }

@@ -31,14 +31,14 @@ public class BranchPager extends AppCompatActivity {
     Dictionary dictionary;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_branch_pager);
         binding.setLifecycleOwner(this);
         binding.setClickers(this);
         DaggerApiComponents.create().inject(this);
-        binding.title.setText(dictionary.get("nearBranches"));
-        titles = new String[]{dictionary.get("list"), dictionary.get("map")};
+        binding.title.setText(dictionary.getTemp("nearBranches"));
+        titles = new String[]{dictionary.getTemp("list"), dictionary.getTemp("map")};
         viewPager = findViewById(R.id.pager);
         FragmentStateAdapter pagerAdapter = new MyPagerAdapter(this);
         viewPager.setAdapter(pagerAdapter);

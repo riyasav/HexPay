@@ -22,7 +22,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bg_white"
             tools:context=".views.remittance.TransferView">
 
             <androidx.constraintlayout.widget.Guideline
@@ -273,6 +272,7 @@
                 android:onClick="@{Clickers::onSubmitClicked}"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
+                android:textStyle="bold"
                 android:text="@{Language.get(`submit`)}"
                 android:textAllCaps="false"
                 android:layout_marginTop="20dp"

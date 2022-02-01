@@ -678,7 +678,7 @@
 
                                             android:fontFamily="@font/roboto_bold"
                                             android:gravity="start"
-                                            android:text="OM1100027028"
+                                            android:text="OM1100020993"
                                             android:textColor="#000000"
                                             android:textSize="12sp" />
 
@@ -710,7 +710,7 @@
                                             android:layout_marginBottom="10dp"
                                             android:fontFamily="@font/roboto_bold"
                                             android:gravity="start"
-                                            android:text="8107014"
+                                            android:text="8119899"
                                             android:textColor="#000000"
                                             android:textSize="12sp" />
 
@@ -795,7 +795,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginEnd="10dp"
-                                    android:layout_marginBottom="10dp"
+                                    android:layout_marginBottom="30dp"
                                     android:gravity="center"
                                     android:orientation="horizontal"
                                    >
