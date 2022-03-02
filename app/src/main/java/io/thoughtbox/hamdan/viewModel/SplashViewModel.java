@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
+import io.thoughtbox.hamdan.model.BannerResponse;
 import io.thoughtbox.hamdan.utls.MutableEventLiveData;
 import io.thoughtbox.hamdan.model.dictionaryModel.DictionaryResponseData;
 import io.thoughtbox.hamdan.repos.SplashRepo;
@@ -35,5 +36,13 @@ public class SplashViewModel extends ViewModel {
     public MutableEventLiveData<ArrayList<DictionaryResponseData>> getDictionaryLiveData() {
         return splashRepo.getDictionaryLiveData();
     }
+
+    public void getBannerData(){
+        splashRepo.getBannerData();
+    }
+    public MutableEventLiveData<BannerResponse> getBannerLiveData() {
+        return splashRepo.getBannerLiveData();
+    }
+
 
 }

@@ -1,4 +1,4 @@
-apply plugin: 'com.android.application'
+  apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
@@ -10,8 +10,8 @@ android {
         applicationId "io.thoughtbox.hamdan"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0.1"
+        versionCode 7
+        versionName "1.0.7"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -88,6 +88,9 @@ dependencies {
 
     implementation 'com.sun.mail:android-mail:1.6.2'
     implementation 'com.sun.mail:android-activation:1.6.2'
+
+    implementation 'com.google.android.play:core:1.10.0'
+
 
 }
 apply plugin: 'com.android.application'

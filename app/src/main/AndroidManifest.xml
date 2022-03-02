@@ -9,13 +9,14 @@
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -25,7 +26,7 @@
         android:required="false" />
 
     <application
-        android:name="io.thoughtbox.hamdan.global.Universal"
+        android:name=".global.Universal"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -33,79 +34,84 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity">
-        <activity android:name="io.thoughtbox.hamdan.views.ChangePassword"></activity>
-        <activity android:name="io.thoughtbox.hamdan.views.Profile" />
-        <activity android:name="io.thoughtbox.hamdan.views.branches.BranchPager" />
-        <activity android:name="io.thoughtbox.hamdan.views.SettingsGrid" />
+        <activity android:name=".views.ChangePassword" />
+        <activity android:name=".views.Profile" />
+        <activity android:name=".views.branches.BranchPager" />
+        <activity android:name=".views.SettingsGrid" />
+        <activity android:name=".views.RateChecker" >
+
+        </activity>
         <activity
-            android:name="io.thoughtbox.hamdan.views.remittance.TransferView"
+            android:name=".views.remittance.TransferView"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.addBen.AddBenCash"
+            android:name=".views.addBen.AddBenCash"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.addBen.AddBenBank"
+            android:name=".views.addBen.AddBenBank"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.Signup"
+            android:name=".views.Signup"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.CheckUser"
+            android:name=".views.CheckUser"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.Feedback"
+            android:name=".views.Feedback"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.Policy"
+            android:name=".views.Policy"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.PushNotifications"
+            android:name=".views.PushNotifications"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.ManageBiometric"
+            android:name=".views.ManageBiometric"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.Language"
+            android:name=".views.Language"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.MainActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.utls.VideoRecording"
+            android:name=".utls.VideoRecording"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.utls.AppUpdate"
+            android:name=".utls.AppUpdate"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.views.Rates"
+            android:name=".views.Rates"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.receipts.Report"
+            android:name=".receipts.Report"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.receipts.PaymentReceipt"
+            android:name=".receipts.PaymentReceipt"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.transfers.PaymentGateWay"
+            android:name=".transfers.PaymentGateWay"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.transfers.CashPickUp"
+            android:name=".transfers.CashPickUp"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.transfers.BankTransfer"
+            android:name=".transfers.BankTransfer"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.DashBoard"
+            android:name=".DashBoard"
             android:screenOrientation="portrait" />
         <activity
-            android:name="io.thoughtbox.hamdan.SplashScreen"
+            android:name=".SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <meta-data
@@ -123,7 +129,7 @@
         </provider>
 
         <service
-            android:name="io.thoughtbox.hamdan.utls.MyFirebaseMessagingService"
+            android:name=".utls.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -147,7 +153,7 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" /> <!-- Broadcast receiver declaration in manifest file and make sure to enable it -->
-        <receiver android:name="io.thoughtbox.hamdan.utls.NetworkChangeReceiver">
+        <receiver android:name=".utls.NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>

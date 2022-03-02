@@ -194,7 +194,7 @@ public class IDFragment extends Fragment implements SelectionListener {
     }
 
     public void onIdExpiryClicked(View view) {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(getContext()), idExpry, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+        DatePickerDialog datePickerDialog = new DatePickerDialog(requireContext(), idExpry, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.getDatePicker().setMinDate(currentDateTime + (1000 * 60 * 60 * 24));
         datePickerDialog.show();
     }
@@ -227,7 +227,7 @@ public class IDFragment extends Fragment implements SelectionListener {
         final int MyVersion = Build.VERSION.SDK_INT;
         if (MyVersion > Build.VERSION_CODES.LOLLIPOP_MR1) {
             if (!hasPermissions(getContext(), PERMISSIONS)) {
-                ActivityCompat.requestPermissions(Objects.requireNonNull(getActivity()), PERMISSIONS, Constants.PHOTO_CAPTURE_CODE);
+                ActivityCompat.requestPermissions(requireActivity(), PERMISSIONS, Constants.PHOTO_CAPTURE_CODE);
             } else {
                 is_clicked_1 = true;
                 is_clicked_2 = false;
@@ -244,7 +244,7 @@ public class IDFragment extends Fragment implements SelectionListener {
         final int MyVersion = Build.VERSION.SDK_INT;
         if (MyVersion > Build.VERSION_CODES.LOLLIPOP_MR1) {
             if (!hasPermissions(getContext(), PERMISSIONS)) {
-                ActivityCompat.requestPermissions(Objects.requireNonNull(getActivity()), PERMISSIONS, Constants.PHOTO_CAPTURE_CODE);
+                ActivityCompat.requestPermissions(requireActivity(), PERMISSIONS, Constants.PHOTO_CAPTURE_CODE);
             } else {
                 is_clicked_1 = false;
                 is_clicked_2 = true;
@@ -258,8 +258,12 @@ public class IDFragment extends Fragment implements SelectionListener {
     }
 
     public void onVideoClicked(View view) {
-        isVideoClicked = true;
-        takeVideo();
+        if (!hasPermissions(getContext(), PERMISSIONS)) {
+            ActivityCompat.requestPermissions(requireActivity(), PERMISSIONS, Constants.PHOTO_CAPTURE_CODE);
+        }else {
+            isVideoClicked = true;
+            takeVideo();
+        }
     }
 
     public void onSubmitClicked(View view) {
@@ -288,7 +292,7 @@ public class IDFragment extends Fragment implements SelectionListener {
 
     private void getSignature() {
         SignaturePad signPad = new SignaturePad();
-        FragmentManager fragmentManager = Objects.requireNonNull(getActivity()).getSupportFragmentManager();
+        FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.container, signPad).addToBackStack(null);
         fragmentTransaction.commit();
@@ -308,14 +312,14 @@ public class IDFragment extends Fragment implements SelectionListener {
     }
 
     private Uri getOutputMediaFileUri(int type) {
-        return FileProvider.getUriForFile(Objects.requireNonNull(getContext()), BuildConfig.APPLICATION_ID + ".provider", getOutputMediaFile(type));
+        return FileProvider.getUriForFile(requireContext(), BuildConfig.APPLICATION_ID + ".provider", getOutputMediaFile(type));
     }
 
     private File getOutputMediaFile(int type) {
 
         // External sdcard location
         String IMAGE_DIRECTORY_NAME = "Register Assets";
-        File mediaStorageDir = new File(Objects.requireNonNull(getContext()).getExternalFilesDir(Environment.DIRECTORY_PICTURES), IMAGE_DIRECTORY_NAME);
+        File mediaStorageDir = new File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), IMAGE_DIRECTORY_NAME);
         // Create the storage directory if it does not exist
         if (!mediaStorageDir.exists()) {
             if (!mediaStorageDir.mkdirs()) {
@@ -376,10 +380,10 @@ public class IDFragment extends Fragment implements SelectionListener {
         File storageDir = null;
         switch (fileType) {
             case "Signature":
-                storageDir = new File(Objects.requireNonNull(getContext()).getExternalFilesDir(Environment.DIRECTORY_PICTURES), "Signature");
+                storageDir = new File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), "Signature");
                 break;
             case "ID Images":
-                storageDir = new File(Objects.requireNonNull(getContext()).getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IdFiles");
+                storageDir = new File(requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES), "IdFiles");
                 break;
         }
         return createFile(storageDir, fileType, image);

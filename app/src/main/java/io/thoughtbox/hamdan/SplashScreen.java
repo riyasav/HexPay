@@ -1,7 +1,9 @@
 package io.thoughtbox.hamdan;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -22,12 +25,18 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.appupdate.AppUpdateInfo;
+import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.install.model.AppUpdateType;
+import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -35,7 +44,9 @@ import io.thoughtbox.hamdan.alerts.NotificationAlerts;
 import io.thoughtbox.hamdan.databinding.ActivitySplashScreenBinding;
 import io.thoughtbox.hamdan.global.Dictionary;
 import io.thoughtbox.hamdan.injections.DaggerApiComponents;
+import io.thoughtbox.hamdan.model.BannerResponse;
 import io.thoughtbox.hamdan.model.dictionaryModel.DictionaryResponseData;
+import io.thoughtbox.hamdan.utls.AppData;
 import io.thoughtbox.hamdan.utls.AppUpdate;
 import io.thoughtbox.hamdan.utls.ConnectionLiveData;
 import io.thoughtbox.hamdan.utls.DeviceUtils;
@@ -57,9 +68,13 @@ public class SplashScreen extends AppCompatActivity {
     Dictionary dictionary;
     private HashMap<String, String> dictMap = new HashMap<>();
     private SplashViewModel splashViewModel;
+    AppData appData;
+
+
+    private AppUpdateManager appUpdateManager;
+    private static final int IMMEDIATE_APP_UPDATE_REQ_CODE = 124;
 
     private FirebaseRemoteConfig mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
-
 
 
     @Override
@@ -67,13 +82,23 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen);
         binding.setLifecycleOwner(this);
-
         checkAutoUpdate();
         init();
-
-
 //        checkExistingUser();
 //        checkUserLanguage();
+        LiveData<BannerResponse> getBannerLiveData = splashViewModel.getBannerLiveData();
+        getBannerLiveData.observe(this, bannerData -> {
+            String hasMessage = bannerData.getHasmessage();
+            String message = bannerData.getMessage();
+            if (hasMessage.equals("1")) {
+                binding.card.setVisibility(View.VISIBLE);
+                binding.textView.setText(message);
+            } else {
+                binding.card.setVisibility(View.GONE);
+                binding.textView.setText(message);
+
+            }
+        });
         LiveData<ArrayList<DictionaryResponseData>> getDictionaryLiveData = splashViewModel.getDictionaryLiveData();
         getDictionaryLiveData.observe(this, dictionaryResponsesList -> {
             for (DictionaryResponseData dictionaryResponse : dictionaryResponsesList) {
@@ -123,19 +148,13 @@ public class SplashScreen extends AppCompatActivity {
 
     private void init() {
         alerts = new NotificationAlerts(this);
+        appData = new AppData(this);
+
         logNewToken();
         checkInternet();
         DaggerApiComponents.create().inject(this);
         splashViewModel = new ViewModelProvider(this).get(SplashViewModel.class);
-//        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
-//            if (!task.isSuccessful()) {
-//                Log.w("TAG", "getInstanceId failed", task.getException());
-//                return;
-//            }
-//            // Get new Instance ID token
-//            String token = Objects.requireNonNull(task.getResult()).getToken();
-//            Log.d("TAG", token);
-//        });
+        splashViewModel.getBannerData();
         loader = new Loader(this);
         progressDialog = loader.progress();
         try {
@@ -149,22 +168,17 @@ public class SplashScreen extends AppCompatActivity {
 
     private void logNewToken() {
         FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(new OnCompleteListener<String>() {
-                    @Override
-                    public void onComplete(@NonNull Task<String> task) {
-                        if (!task.isSuccessful()) {
-                            Log.w("TAG", "Fetching FCM registration token failed", task.getException());
-                            return;
-                        }
-
-                        // Get new FCM registration token
-                        String token = task.getResult();
-
-                        // Log and toast
-                        String msg = getString(R.string.msg_token_fmt, token);
-                        Log.d("TAG", msg);
-//                        Toast.makeText(SplashScreen.this, msg, Toast.LENGTH_SHORT).show();
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                        return;
                     }
+                    // Get new FCM registration token
+                    String token = task.getResult();
+                    // Log and toast
+                    String msg = getString(R.string.msg_token_fmt, token);
+                    Log.d("TAG", msg);
+//                        Toast.makeText(SplashScreen.this, msg, Toast.LENGTH_SHORT).show();
                 });
     }
 
@@ -198,24 +212,82 @@ public class SplashScreen extends AppCompatActivity {
                         String version = FirebaseRemoteConfig.getInstance().getString("latest_app_version");
                         if (!version.equals("null")) {
                             if (!Build.MANUFACTURER.toUpperCase().trim().equals("HUAWEI")) {
-//                                int playStoreVersionCode = Integer.parseInt(version);
-//                                if (playStoreVersionCode>getCurrentVersionCode()){
-//                                    showPlayStoreDialog();
+                                int playStoreVersionCode = Integer.parseInt(version);
+                                if (playStoreVersionCode > getCurrentVersionCode()) {
+
+                                    if (verifyInstallerId(this)) {
+//                                        showPlayStoreDialog();
+                                        checkUpdate();
+                                    } else {
+                                        Toast.makeText(this, "This App version is not installed via playstore. kindly uninstall this version and install from playstore", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } else {
+                                    checkExistingUser();
+                                    getLanguages(appData.getDeviceLanguage());
+                                }
+                            } else {
                                 checkExistingUser();
-                                checkUserLanguage();
+                                getLanguages(appData.getDeviceLanguage());
                             }
-//                            else {
-//                                checkExistingUser();
-//                                checkUserLanguage();
-//                            }
                         }
 
                     }
                 });
     }
 
+    private void checkUpdate() {
+        com.google.android.play.core.tasks.Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                startUpdateFlow(appUpdateInfo);
+            } else if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                startUpdateFlow(appUpdateInfo);
+            }
+        });
+    }
+
+    private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
+        try {
+            appUpdateManager.startUpdateFlowForResult(
+                    appUpdateInfo,
+                    AppUpdateType.IMMEDIATE,
+                    this,
+                    SplashScreen.IMMEDIATE_APP_UPDATE_REQ_CODE);
+        } catch (IntentSender.SendIntentException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == IMMEDIATE_APP_UPDATE_REQ_CODE) {
+            if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(getApplicationContext(), "Update canceled", Toast.LENGTH_LONG).show();
+            } else if (resultCode == RESULT_OK) {
+                Toast.makeText(getApplicationContext(), "Updated successfully", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getApplicationContext(), "Update failed", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
     private void checkIsRooted() {
         startTimerThread();
+    }
+
+    boolean verifyInstallerId(Context context) {
+        // A list with valid installers package name
+        List<String> validInstallers = new ArrayList<>(Arrays.asList("com.android.vending", "com.google.android.feedback"));
+
+        // The package name of the app that has installed your app
+        final String installer = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+
+        // true if your app has been downloaded from Play Store
+        return installer != null && validInstallers.contains(installer);
     }
 
     private void showPlayStoreDialog() {

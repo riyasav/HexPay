@@ -9,6 +9,7 @@ import io.thoughtbox.hamdan.DashBoard;
 import io.thoughtbox.hamdan.MainActivity;
 import io.thoughtbox.hamdan.SplashScreen;
 
+import io.thoughtbox.hamdan.repos.RateCheckerRepo;
 import io.thoughtbox.hamdan.repos.RewardsRepo;
 import io.thoughtbox.hamdan.utls.AuthenticationHelper;
 import io.thoughtbox.hamdan.alerts.AuthenticationView;
@@ -39,6 +40,7 @@ import io.thoughtbox.hamdan.views.Language;
 import io.thoughtbox.hamdan.views.ManageBiometric;
 import io.thoughtbox.hamdan.views.Profile;
 import io.thoughtbox.hamdan.views.PushNotifications;
+import io.thoughtbox.hamdan.views.RateChecker;
 import io.thoughtbox.hamdan.views.Rates;
 import io.thoughtbox.hamdan.views.SettingsGrid;
 import io.thoughtbox.hamdan.views.addBen.AddBenBank;
@@ -136,4 +138,5 @@ public interface ApiComponents {
 
     void inject(BranchPager branchPager);
 
+    void inject(RateCheckerRepo rateCheckerRepo);
 }

@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import io.thoughtbox.hamdan.utls.AppData;
 import io.thoughtbox.hamdan.utls.MutableEventLiveData;
 import io.thoughtbox.hamdan.model.dictionaryModel.DictionaryResponseData;
 import io.thoughtbox.hamdan.model.languageModel.LanguageResponseData;
@@ -29,20 +30,20 @@ public class LoginViewModel extends AndroidViewModel {
         loginRepo.clear();
     }
 
-    public void doLogin(LoginRequestModel params) {
-        loginRepo.getLogin(params);
+    public void doLogin(AppData appData,LoginRequestModel params) {
+        loginRepo.getLogin(appData,params);
     }
 
-    public void biometricLogin(JSONObject params) {
-        loginRepo.biometricLogin(params);
+    public void biometricLogin(AppData appData, JSONObject params) {
+        loginRepo.biometricLogin(appData,params);
     }
 
     public MutableEventLiveData<ArrayList<DictionaryResponseData>> getDictionaryLiveData() {
         return loginRepo.getDictionaryLiveData();
     }
 
-    public void getDictionry() {
-        loginRepo.getDictionary();
+    public void getDictionry(String lang) {
+        loginRepo.getDictionary(lang);
     }
 
     public void getAllLanguages() {

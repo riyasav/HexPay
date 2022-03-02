@@ -47,6 +47,10 @@ public class Loader extends AppCompatActivity {
 
 
 
+
+
+
+
         return progressDialog;
     }
 

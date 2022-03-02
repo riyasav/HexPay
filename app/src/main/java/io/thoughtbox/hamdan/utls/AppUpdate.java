@@ -21,7 +21,7 @@ public class AppUpdate extends AppCompatActivity {
         Button cancel = findViewById(R.id.cancel);
 
         update.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=io.thoughtbox.jadeed"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=io.thoughtbox.hamdan"));
             startActivity(intent);
         });
 

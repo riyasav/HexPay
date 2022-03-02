@@ -56,8 +56,8 @@ public class Feedback extends AppCompatActivity {
         });
     }
 
-    private void submitFeedback(String feedback, String rating) {
-        String[] emailList = {"customersupport@aljadeedexchange.org"};
+    private void submitFeedback(String feedback, String rating){
+        String[] emailList = {"hexpay@hamdanexchange.com"};
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("plain/text");
         intent.putExtra(Intent.EXTRA_EMAIL, emailList);
@@ -99,13 +99,13 @@ public class Feedback extends AppCompatActivity {
     }
 
     public void sendMail(String feedback, String rating) {
-        final String username = "customersupport@aljadeedexchange.org";
-        final String password = "Reset@100";
+        final String username = "hexpay@hamdanexchange.com";
+        final String password = "Haq21195";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.host", "smtp.office365.com");
         props.put("mail.smtp.port", "587");
 
         Session session = Session.getInstance(props, new Authenticator() {
@@ -122,8 +122,8 @@ public class Feedback extends AppCompatActivity {
 //        });
         try {
             Message message = new MimeMessage(session);
-//            message.setFrom(new InternetAddress("AL-Jadeed"));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("customersupport@aljadeedexchange.org"));
+          message.setFrom(new InternetAddress("hexpay@hamdanexchange.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("hexpay@hamdanexchange.com"));
             message.setSubject(Universal.getInstance().getLoginResponsedata().getEmail() + "(" + Universal.getInstance().getLoginResponsedata().getIdno() + ")" + " Rated " + rating);
             message.setText(feedback);
 

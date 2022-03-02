@@ -48,10 +48,12 @@ import io.thoughtbox.hamdan.model.transferModel.TransferResponseData;
 import io.thoughtbox.hamdan.receipts.PaymentReceipt;
 import io.thoughtbox.hamdan.transfers.PaymentGateWay;
 import io.thoughtbox.hamdan.utls.ConnectionLiveData;
+import io.thoughtbox.hamdan.utls.Constants;
 import io.thoughtbox.hamdan.utls.Loader;
 import io.thoughtbox.hamdan.utls.OnResendOtp;
 import io.thoughtbox.hamdan.viewModel.OtpViewModel;
 import io.thoughtbox.hamdan.viewModel.TransferViewModel;
+import io.thoughtbox.hamdan.views.Policy;
 
 public class TransferView extends AppCompatActivity implements SelectionListener, OnResendOtp {
     @Inject
@@ -286,8 +288,18 @@ public class TransferView extends AppCompatActivity implements SelectionListener
 
          SpannableStringBuilder sb = new SpannableStringBuilder("By clicking submit you agree to the Terms and Conditions");
          StyleSpan bss = new StyleSpan(android.graphics.Typeface.BOLD); // Span to make text bold
-        sb.setSpan(bss, 35, 56, Spannable.SPAN_INCLUSIVE_INCLUSIVE); // make first 4 characters Bold
-        termsAndCondition.setText(sb);
+         sb.setSpan(bss, 35, 56, Spannable.SPAN_INCLUSIVE_INCLUSIVE); // make first 4 characters Bold
+         termsAndCondition.setText(sb);
+
+        termsAndCondition.setOnClickListener(view-> {
+
+            Intent intent1 = new Intent(getApplicationContext(), Policy.class);
+            intent1.putExtra("url", Constants.Terms);
+            intent1.putExtra("title", dictionary.get("termsCondition"));
+            intent1.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent1);
+
+        });
     }
 
     private void navigateToPaymentWindow() {

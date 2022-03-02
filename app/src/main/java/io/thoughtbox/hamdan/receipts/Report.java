@@ -60,7 +60,7 @@ public class Report extends AppCompatActivity implements ReportListener {
     InvoiceViewModel invoiceViewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_report);
         binding.setLifecycleOwner(this);

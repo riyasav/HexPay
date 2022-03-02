@@ -214,6 +214,7 @@ public class Profile extends AppCompatActivity implements SelectionListener {
                         .asBitmap()
                         .load(R.drawable.ic_add)
                         .into(binding.imageView41);
+
             }
         });
 

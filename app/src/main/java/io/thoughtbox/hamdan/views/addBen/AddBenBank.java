@@ -496,19 +496,27 @@ public class AddBenBank extends AppCompatActivity implements SelectionListener, 
 
     private boolean validate() {
         boolean check = true;
-        if (transferTypeName.contains("BANK") || transferTypeName.toUpperCase().contains("ACCOUNT")) {
-            if (!hasText(binding.accountNumber)) check = false;
-            if (!hasText(binding.confirm)) check = false;
-        }
+
+
         if (!hasText(binding.name)) check = false;
         if (!hasText(binding.mobile)) check = false;
         if (!hasText(binding.type)) check = false;
         if (!hasText(binding.country)) check = false;
         if (!hasText(binding.txntype)) check = false;
+        if(transferTypeName!=null){
+            if (transferTypeName.contains("BANK") || transferTypeName.toUpperCase().contains("ACCOUNT")) {
+                if (!hasText(binding.accountNumber)) check = false;
+                if (!hasText(binding.confirm)) check = false;
+            }else {
+                binding.accountNumber.setError(null);
+                binding.accountNumber.setError(null);
+            }
+        }
         if (!hasText(binding.bank)) check = false;
         if (!hasText(binding.branch)) check = false;
         if (!hasText(binding.relation)) check = false;
         if (!hasText(binding.nationality)) check = false;
+
         return check;
     }
 
@@ -555,10 +563,13 @@ public class AddBenBank extends AppCompatActivity implements SelectionListener, 
                 }
             } else {
                 binding.confirm.setError("Account Number mismatch");
+
             }
         }
 
         public void onSubmitted(View view) {
+
+
             onAccountSubmitted();
 
         }

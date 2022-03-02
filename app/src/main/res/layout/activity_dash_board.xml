@@ -29,6 +29,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -191,7 +192,7 @@
                                         android:onClick="@{Clickers::onLcCurrencyClicked}"
                                         android:singleLine="true"
                                         android:text="OMR"
-                                        android:textColor="@color/colorPrimary"
+                                        android:textColor="@color/red"
                                         android:textSize="14sp" />
                                 </LinearLayout>
 
@@ -238,7 +239,7 @@
                                         android:onClick="@{Clickers::onFcCurrencyClicked}"
                                         android:singleLine="true"
                                         android:text="INR"
-                                        android:textColor="@color/colorPrimary"
+                                        android:textColor="@color/red"
                                         android:textSize="14sp" />
                                 </LinearLayout>
 
@@ -309,7 +310,7 @@
                                     android:gravity="end"
                                     android:singleLine="true"
                                     android:text="@{Language.get(`excludingTransactionCharges`)}"
-                                    android:textColor="@color/red"
+                                    android:textColor="@color/textColor2"
                                     android:textSize="10dp"
                                     app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
                                     app:layout_constraintStart_toStartOf="@+id/linearLayout2"
@@ -489,8 +490,6 @@
                                 android:textColor="@color/textColor"
                                 android:textSize="12sp"
                                 app:drawableTopCompat="@drawable/ic_cash_pickup"
-
-
                                 app:layout_constraintBottom_toTopOf="@+id/textView70"
                                 app:layout_constraintEnd_toStartOf="@+id/guideline13"
                                 app:layout_constraintHorizontal_bias="0.6"
@@ -591,6 +590,7 @@
                             android:layout_marginBottom="16dp"
                             android:background="@drawable/roundbutton_white"
                             android:drawablePadding="10dp"
+                            android:elevation="3dp"
                             android:fontFamily="@font/opensans_bold"
                             android:gravity="center"
                             android:onClick="@{Clickers::onShareClicked}"
@@ -598,7 +598,6 @@
                             android:paddingTop="10dp"
                             android:paddingEnd="20dp"
                             android:paddingBottom="10dp"
-                            android:elevation="3dp"
                             android:text="Invite friends and people"
                             android:textColor="@color/textColor"
                             android:textSize="12sp"
@@ -645,21 +644,21 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottom_navigation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/colorPrimaryDark"
-                app:itemIconTint="@color/white"
-                app:itemTextAppearance="@font/opensans_reg"
-                app:itemTextColor="@color/white"
-                app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
-                app:menu="@menu/bottom_navigation_menu" />
-
 
         </RelativeLayout>
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            app:itemIconTint="@color/white"
+            app:itemTextAppearance="@font/opensans_reg"
+            app:itemTextColor="@color/white"
+            app:layout_anchor="@+id/relativeLayout2"
+            app:layout_anchorGravity="bottom|center"
+            app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+            app:menu="@menu/bottom_navigation_menu" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
