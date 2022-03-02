@@ -30,6 +30,7 @@ import java.util.HashMap;
 import javax.inject.Inject;
 
 import io.thoughtbox.hamdan.model.loginModel.Otp;
+import io.thoughtbox.hamdan.utls.AppData;
 import io.thoughtbox.hamdan.utls.ConnectionLiveData;
 import io.thoughtbox.hamdan.utls.FingerAuthentication;
 import io.thoughtbox.hamdan.utls.FingerIdentification;
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
     private FingerIdentification fingerprintSensor;
     private String loginMode;
     String ipAddress;
+    AppData appData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,16 +82,13 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         LiveData<ArrayList<DictionaryResponseData>> liveDictObj = loginViewModel.getDictionaryLiveData();
         liveDictObj.observe(this, dictionaryResponsesList -> {
 
-            for (DictionaryResponseData dictionaryResponse : dictionaryResponsesList){
+            for (DictionaryResponseData dictionaryResponse : dictionaryResponsesList) {
                 dictMap.put(dictionaryResponse.getItem(), dictionaryResponse.getValue());
                 Dictionary.getInstance().setLangMap(dictMap);
             }
-            setRegisteredLanguage(Universal.getInstance().getLoginResponsedata().getLang());
             if (progressDialog.isShowing()) {
                 progressDialog.dismiss();
-                Log.d("Loader", "closing active loader");
             }
-
             changeTransaction();
 
         });
@@ -142,14 +141,25 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         LiveData<Boolean> updateDeviceTokenLiveData = loginViewModel.getIsDeviceTokenUpdated();
         updateDeviceTokenLiveData.observe(this, isDeviceTokenUpdated -> {
             if (isDeviceTokenUpdated) {
-                if (Universal.getInstance().getLoginResponsedata().getIsfirsttimeloginuser().equals("1")){
-                    Intent intent1 = new Intent(this, ChangePassword.class);
-                    intent1.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent1);
-                }else{
-                    Intent intent = new Intent(this, DashBoard.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
+//                setUserLanguage(langaugeUsed);
+                if (appData.hasDefaultLanguage()) {
+                    JSONObject params = new JSONObject();
+                    try {
+                        params.put("language", appData.getDeviceLanguage());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    loginViewModel.updateLanguage(params);
+                } else {
+                    if (Universal.getInstance().getLoginResponsedata().getIsfirsttimeloginuser().equals("1")) {
+                        Intent intent1 = new Intent(this, ChangePassword.class);
+                        intent1.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent1);
+                    } else {
+                        Intent intent = new Intent(this, DashBoard.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        startActivity(intent);
+                    }
                 }
 
             }
@@ -176,10 +186,15 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
 
     }
 
+    private void updateLanguageStatus() {
+        Toast.makeText(this, "Language updated", Toast.LENGTH_SHORT).show();
+        mainBinding.invalidateAll();
+    }
     private void init() {
 
         checkInternet();
         DaggerApiComponents.create().inject(this);
+        appData=new AppData(this);
         ClickListners clickListners = new ClickListners();
         requestModel = new LoginRequestModel();
         mainBinding.setClickers(clickListners);
@@ -267,7 +282,7 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        loginViewModel.biometricLogin(object);
+        loginViewModel.biometricLogin(appData,object);
     }
 
     @Override
@@ -279,7 +294,7 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
         if (requestModel.getUsername() != null && requestModel.getPassword() != null) {
             requestModel.setPlatform("ANDROID");
             requestModel.setIpaddress(ipAddress);
-            loginViewModel.doLogin(requestModel);
+            loginViewModel.doLogin(appData,requestModel);
         } else {
             Toast.makeText(this, "Invalid Username/Password", Toast.LENGTH_SHORT).show();
         }

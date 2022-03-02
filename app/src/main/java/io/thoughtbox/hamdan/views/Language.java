@@ -26,6 +26,7 @@ import javax.inject.Inject;
 import io.thoughtbox.hamdan.Adapters.LanguageAdapter;
 import io.thoughtbox.hamdan.Adapters.LanguageClickListner;
 import io.thoughtbox.hamdan.R;
+import io.thoughtbox.hamdan.utls.AppData;
 import io.thoughtbox.hamdan.utls.ConnectionLiveData;
 import io.thoughtbox.hamdan.utls.Loader;
 import io.thoughtbox.hamdan.alerts.NotificationAlerts;
@@ -50,6 +51,7 @@ public class Language extends AppCompatActivity implements LanguageClickListner 
     private Dialog progressDialog;
     private TextView emptymsg;
     private String langaugeUsed;
+    AppData appData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +102,10 @@ public class Language extends AppCompatActivity implements LanguageClickListner 
         updateLanguage.observe(this, status -> {
             if (status) {
                 Universal.getInstance().getLoginResponsedata().setLang(langaugeUsed);
-                viewModel.getDictionry();
-                setRegisteredLanguage(currentLang);
+                viewModel.getDictionry(langaugeUsed);
+                appData.setDeviceLanguage(currentLang);
+
+//                setRegisteredLanguage(currentLang);
             } else {
                 Toast.makeText(this, "Update failed", Toast.LENGTH_SHORT).show();
             }
@@ -133,6 +137,7 @@ public class Language extends AppCompatActivity implements LanguageClickListner 
         checkInternet();
         DaggerApiComponents.create().inject(this);
         alerts = new NotificationAlerts(this);
+        appData = new AppData(this);
         Loader loader = new Loader(this);
         progressDialog = loader.progress();
         langaugeUsed = Universal.getInstance().getLoginResponsedata().getLang();

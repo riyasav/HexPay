@@ -32,6 +32,7 @@ public class ApiModule {
     private Retrofit retrofit = null;
 
 
+/*
     private static OkHttpClient getUnsafeOkHttpClient() {
         try {
             // Create a trust manager that does not validate certificate chains
@@ -73,6 +74,7 @@ public class ApiModule {
             throw new RuntimeException(e);
         }
     }
+*/
 
 
     @Provides
@@ -93,7 +95,6 @@ public class ApiModule {
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .client(getUnsafeOkHttpClient())
                     .build();
         }
 

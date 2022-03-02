@@ -46,6 +46,7 @@ import io.thoughtbox.hamdan.global.Dictionary;
 import io.thoughtbox.hamdan.injections.DaggerApiComponents;
 import io.thoughtbox.hamdan.model.BannerResponse;
 import io.thoughtbox.hamdan.model.dictionaryModel.DictionaryResponseData;
+import io.thoughtbox.hamdan.utls.AppData;
 import io.thoughtbox.hamdan.utls.AppUpdate;
 import io.thoughtbox.hamdan.utls.ConnectionLiveData;
 import io.thoughtbox.hamdan.utls.DeviceUtils;
@@ -67,6 +68,8 @@ public class SplashScreen extends AppCompatActivity {
     Dictionary dictionary;
     private HashMap<String, String> dictMap = new HashMap<>();
     private SplashViewModel splashViewModel;
+    AppData appData;
+
 
     private AppUpdateManager appUpdateManager;
     private static final int IMMEDIATE_APP_UPDATE_REQ_CODE = 124;
@@ -145,6 +148,8 @@ public class SplashScreen extends AppCompatActivity {
 
     private void init() {
         alerts = new NotificationAlerts(this);
+        appData = new AppData(this);
+
         logNewToken();
         checkInternet();
         DaggerApiComponents.create().inject(this);
@@ -219,11 +224,11 @@ public class SplashScreen extends AppCompatActivity {
 
                                 } else {
                                     checkExistingUser();
-                                    checkUserLanguage();
+                                    getLanguages(appData.getDeviceLanguage());
                                 }
                             } else {
                                 checkExistingUser();
-                                checkUserLanguage();
+                                getLanguages(appData.getDeviceLanguage());
                             }
                         }
 

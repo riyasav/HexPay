@@ -37,6 +37,7 @@ import io.thoughtbox.hamdan.model.loginModel.Otp;
 import io.thoughtbox.hamdan.model.loginModel.OtpRequestModel;
 import io.thoughtbox.hamdan.services.DataService;
 import io.thoughtbox.hamdan.services.ServiceRequest;
+import io.thoughtbox.hamdan.utls.AppData;
 import io.thoughtbox.hamdan.utls.MutableEventLiveData;
 import retrofit2.HttpException;
 
@@ -76,7 +77,7 @@ public class LoginRepo {
         return loadingError;
     }
 
-    public void biometricLogin(JSONObject params) {
+    public void biometricLogin(AppData appData,JSONObject params) {
         isLoading.postValue(true);
 
         JsonParser jsonParser = new JsonParser();
@@ -93,8 +94,19 @@ public class LoginRepo {
 
                         if (loginResponseModel.getResponsestatus().toUpperCase().equals("TRUE")) {
                             Universal.getInstance().setLoginResponsedata(loginResponseModel.getResponsedata());
-                            getDictionary();
-                        } else {
+                            if (appData.hasDefaultLanguage()){
+                                getDictionary(appData.getDeviceLanguage());
+                                JSONObject params = new JSONObject();
+                                try {
+                                    params.put("language", appData.getDeviceLanguage());
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                updateSelectedLanguage(params);
+
+                            }else{
+                                getDictionary(Universal.getInstance().getLoginResponsedata().getLang());
+                            }                        } else {
                             isLoading.postValue(false);
                             loadingError.postValue(loginResponseModel.getResponsedescription());
                         }
@@ -115,7 +127,7 @@ public class LoginRepo {
         );
     }
 
-    public void getLogin(LoginRequestModel requestParams) {
+    public void getLogin(AppData appData, LoginRequestModel requestParams) {
         isLoading.postValue(true);
         DataService dataService = serviceRequest.getDataService();
         Observable<LoginResponse> observerCall = dataService.userLogin(requestParams);
@@ -128,7 +140,11 @@ public class LoginRepo {
 
                         if (loginResponseModel.getResponsestatus().toUpperCase().equals("TRUE")) {
                             Universal.getInstance().setLoginResponsedata(loginResponseModel.getResponsedata());
-                            getDictionary();
+                            if (appData.hasDefaultLanguage()) {
+                                getDictionary(appData.getDeviceLanguage());
+                            } else {
+                                getDictionary(Universal.getInstance().getLoginResponsedata().getLang());
+                            }
                         } else {
                             isLoading.postValue(false);
                             loadingError.postValue(loginResponseModel.getResponsedescription());
@@ -150,13 +166,13 @@ public class LoginRepo {
         );
     }
 
-    public void getDictionary() {
+    public void getDictionary(String language) {
         isLoading.postValue(true);
         dictionaryResponse = new ArrayList<>();
         DataService dataService = serviceRequest.getDataService();
 
         Observable<DictionaryResponse> dictionaryObserver = dataService.getDictionaryResponse(
-                Universal.getInstance().getLoginResponsedata().getLang(),
+                language,
                 "Bearer " + Universal.getInstance().getLoginResponsedata().getToken()
         );
 
