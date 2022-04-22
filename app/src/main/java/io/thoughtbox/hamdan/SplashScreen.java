@@ -7,9 +7,13 @@ import android.content.IntentSender;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -82,8 +86,13 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen);
         binding.setLifecycleOwner(this);
+        binding.textView46.setEnabled(false);
         checkAutoUpdate();
         init();
+
+        binding.textView46.setOnClickListener(view -> {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=io.thoughtbox.hamdan")));
+        });
 //        checkExistingUser();
 //        checkUserLanguage();
         LiveData<BannerResponse> getBannerLiveData = splashViewModel.getBannerLiveData();
@@ -176,6 +185,7 @@ public class SplashScreen extends AppCompatActivity {
                     // Get new FCM registration token
                     String token = task.getResult();
                     // Log and toast
+
                     String msg = getString(R.string.msg_token_fmt, token);
                     Log.d("TAG", msg);
 //                        Toast.makeText(SplashScreen.this, msg, Toast.LENGTH_SHORT).show();
@@ -217,9 +227,13 @@ public class SplashScreen extends AppCompatActivity {
 
                                     if (verifyInstallerId(this)) {
 //                                        showPlayStoreDialog();
+                                        binding.textView46.setEnabled(true);
+                                        SpannableString string = new SpannableString("Latest version is available on play store. Click here to update.");
+                                        string.setSpan(new UnderlineSpan(), 43, 53, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                        binding.textView46.setText(string);
                                         checkUpdate();
                                     } else {
-                                        Toast.makeText(this, "This App version is not installed via playstore. kindly uninstall this version and install from playstore", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(this, "This App version is not installed via play store. kindly uninstall this version and install from play store", Toast.LENGTH_SHORT).show();
                                     }
 
                                 } else {

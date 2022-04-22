@@ -334,7 +334,7 @@ public class SettingsGrid extends AppCompatActivity {
         }
 
         public void onCustomerSupportClicked(View view) {
-            makePhoneCall("+968-95-770895");
+            makePhoneCall("+968-23-211258");
         }
 
         private void makePhoneCall(String customerCareNumber) {

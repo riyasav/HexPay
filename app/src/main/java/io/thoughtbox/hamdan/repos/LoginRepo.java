@@ -347,7 +347,6 @@ public class LoginRepo {
                                 isLoading.postValue(false);
                                 if (Build.MANUFACTURER.toUpperCase().trim().equals("HUAWEI")) {
                                     isDeviceTokenUpdated.setValue(true);
-
                                 } else {
                                     getFCMToken();
                                 }

@@ -321,7 +321,7 @@ public class DashBoard extends AppCompatActivity implements  SelectionListener {
         }
 
         public void onWhatsappClicked(View view) {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/96891455455")));
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/+96895770895")));
         }
 
         public void onShareClicked(View view) {

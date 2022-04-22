@@ -129,7 +129,7 @@
         </provider>
 
         <service
-            android:name=".utls.MyFirebaseMessagingService"
+            android:name="io.thoughtbox.hamdan.utls.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -158,6 +158,14 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
+<!--        <receiver android:name=".utls.NotificationReceiver"-->
+        <!--            android:exported="true"-->
+        <!--            android:permission="com.google.c2dm.permission.SEND">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="com.google.c2dm.intent.RECEIVE"/>-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
     </application>
 
 </manifest>
