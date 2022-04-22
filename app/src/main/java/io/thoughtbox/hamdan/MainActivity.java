@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements FingerAuthenticat
                 dictMap.put(dictionaryResponse.getItem(), dictionaryResponse.getValue());
                 Dictionary.getInstance().setLangMap(dictMap);
             }
+
             if (progressDialog.isShowing()) {
                 progressDialog.dismiss();
             }

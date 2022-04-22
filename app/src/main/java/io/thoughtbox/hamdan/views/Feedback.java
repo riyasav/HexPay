@@ -56,7 +56,7 @@ public class Feedback extends AppCompatActivity {
         });
     }
 
-    private void submitFeedback(String feedback, String rating){
+    private void submitFeedback(String feedback, String rating) {
         String[] emailList = {"hexpay@hamdanexchange.com"};
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("plain/text");
@@ -100,7 +100,7 @@ public class Feedback extends AppCompatActivity {
 
     public void sendMail(String feedback, String rating) {
         final String username = "hexpay@hamdanexchange.com";
-        final String password = "Haq21195";
+        final String password = "CYugx121";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -122,7 +122,7 @@ public class Feedback extends AppCompatActivity {
 //        });
         try {
             Message message = new MimeMessage(session);
-          message.setFrom(new InternetAddress("hexpay@hamdanexchange.com"));
+            message.setFrom(new InternetAddress("hexpay@hamdanexchange.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("hexpay@hamdanexchange.com"));
             message.setSubject(Universal.getInstance().getLoginResponsedata().getEmail() + "(" + Universal.getInstance().getLoginResponsedata().getIdno() + ")" + " Rated " + rating);
             message.setText(feedback);

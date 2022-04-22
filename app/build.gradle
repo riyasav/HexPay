@@ -10,8 +10,8 @@ android {
         applicationId "io.thoughtbox.hamdan"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 7
-        versionName "1.0.7"
+        versionCode 8
+        versionName "1.0.8"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,6 +25,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions{
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
     }
 
     lintOptions {
@@ -86,8 +91,8 @@ dependencies {
     implementation 'androidx.work:work-runtime:2.6.0-beta01'
     implementation 'org.greenrobot:eventbus:3.1.1'
 
-    implementation 'com.sun.mail:android-mail:1.6.2'
-    implementation 'com.sun.mail:android-activation:1.6.2'
+    implementation 'com.sun.mail:android-mail:1.6.6'
+    implementation 'com.sun.mail:android-activation:1.6.6'
 
     implementation 'com.google.android.play:core:1.10.0'
 

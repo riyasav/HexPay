@@ -86,17 +86,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.45"
-            app:layout_constraintGuide_begin="20dp" />
+            app:layout_constraintGuide_begin="20dp"
+            app:layout_constraintGuide_percent="0.45" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card"
             android:layout_width="0dp"
-            android:visibility="gone"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:visibility="gone"
             app:cardCornerRadius="10dp"
             app:contentPadding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -105,11 +105,12 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:textColor="@color/textColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="" />
+                android:text=""
+                android:textColor="@color/textColor" />
         </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
