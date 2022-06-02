@@ -595,7 +595,7 @@
                             android:paddingTop="10dp"
                             android:paddingEnd="20dp"
                             android:paddingBottom="10dp"
-                            android:text="Invite friends and people"
+                            android:text="Refer your friend"
                             android:textColor="@color/textColor"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/share_24"

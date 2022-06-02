@@ -3,9 +3,9 @@ package io.thoughtbox.hamdan.utls;
 public interface Constants {
 
 //uat
-    String BaseURL = "https://uatapi.hamdanexchange.com/";
+//    String BaseURL = "https://uatapi.hamdanexchange.com/";
     //production
-//    String BaseURL = "https://ilxapi.hamdanexchange.com/";
+    String BaseURL = "https://ilxapi.hamdanexchange.com/";
     String PaymentGateWayURL = BaseURL + "onlinepayments/processpayment";
     String CheckUpdate = BaseURL + "deviceversion/getbyplatform";
 
