@@ -1,17 +1,17 @@
-  apply plugin: 'com.android.application'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
-    buildFeatures{
-        dataBinding=true
+    buildFeatures {
+        dataBinding = true
     }
     defaultConfig {
         applicationId "io.thoughtbox.hamdan"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 12
-        versionName "1.0.12"
+        versionCode 14
+        versionName "1.0.14"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,7 +27,7 @@ android {
         }
     }
 
-    packagingOptions{
+    packagingOptions {
         exclude 'META-INF/NOTICE.md'
         exclude 'META-INF/LICENSE.md'
     }
