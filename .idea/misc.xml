@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_black_logo.xml" value="0.2625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_blue_logo.xml" value="0.2625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_logo_new.xml" value="0.2625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_logo_round_bg.xml" value="0.2625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_logout.xml" value="0.2625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_main_logo.xml" value="0.2625" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_splash_logo.xml" value="0.2625" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_thumb_logo.xml" value="0.2115" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_add_ben_bank.xml" value="0.25" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_bank_transfer.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_cash_pick_up.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_dash_board.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_payment_receipt.xml" value="0.36666666666666664" />
@@ -12,6 +22,7 @@
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/confirm_delete.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/currency_list_bottomsheet.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/listview_bottomsheet.xml" value="0.25" />
         <entry key="..\:/Users/Asus/AndroidStudioProjects/Hamdan/app/src/main/res/layout/logout.xml" value="0.25" />
         <entry key="..\:/Users/firos/AndroidStudioProjects/Hamdan/app/src/main/res/drawable/ic_tb_splash.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/firos/AndroidStudioProjects/Hamdan/app/src/main/res/layout/activity_check_user.xml" value="0.25" />

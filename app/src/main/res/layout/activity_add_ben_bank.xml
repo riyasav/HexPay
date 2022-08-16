@@ -52,10 +52,10 @@
                 android:id="@+id/textView43"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_reg"
+                android:fontFamily="@font/opensans_bold"
                 android:text="@{Language.get(`addBankBenNewSet`)}"
                 android:textColor="@color/textColor"
-                  android:textSize="16sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline135"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +73,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout34"
-                 style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`nameBankNewSet`)}"
@@ -88,12 +88,12 @@
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:fontFamily="@font/opensans_reg"
                     android:textColor="@color/textColor"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout35"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`mobileBankNewSet`)}"
@@ -105,16 +105,16 @@
                     android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="0123456789"
                     android:fontFamily="@font/opensans_reg"
                     android:inputType="phone"
-                    android:digits="0123456789"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout36"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`accountNumberBankNewSet`)}"
@@ -131,12 +131,12 @@
                     android:fontFamily="@font/opensans_reg"
                     android:longClickable="false"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout37"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`confirmAccountNumberBankNewSet`)}"
@@ -149,12 +149,12 @@
                     android:id="@+id/confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_reg"
                     android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:fontFamily="@font/opensans_reg"
                     android:inputType="textPassword"
                     android:longClickable="false"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.constraintlayout.widget.Guideline
@@ -167,7 +167,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout38"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
@@ -188,12 +188,12 @@
                     android:onClick="@{Clickers::onUserTypeClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout40"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -215,12 +215,12 @@
                     android:onClick="@{Clickers::onCountryClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/transfertype_view"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
@@ -242,12 +242,12 @@
                     android:onClick="@{Clickers::onTxnTypeClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/bank_view"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -269,12 +269,12 @@
                     android:onClick="@{Clickers::onBankClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/branchView"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`branchBankNewSet`)}"
@@ -295,12 +295,12 @@
                     android:onClick="@{Clickers::onBranchClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout43"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`relationBeneficiaryBankNewSet`)}"
@@ -322,12 +322,12 @@
                     android:onClick="@{Clickers::onRelationClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout44"
-               style="@style/Widget.Design.TextInputLayout"
+                style="@style/Widget.Design.TextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:hint="@{Language.get(`nationalityBankNewSet`)}"
@@ -348,7 +348,7 @@
                     android:onClick="@{Clickers::onNationalityClicked}"
                     android:singleLine="true"
                     android:textColor="@color/textColor"
-                      android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <android.widget.Button
@@ -357,12 +357,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/roundbutton"
+                android:fontFamily="@font/roboto_bold"
                 android:onClick="@{Clickers::onSubmitted}"
                 android:paddingStart="30dp"
                 android:paddingEnd="30dp"
                 android:text="@{Language.get(`submitBankNewSet`)}"
                 android:textColor="@color/grey"
-                android:fontFamily="@font/roboto_bold"
                 app:layout_constraintEnd_toStartOf="@+id/guideline137"
                 app:layout_constraintStart_toStartOf="@+id/guideline136"
                 app:layout_constraintTop_toBottomOf="@+id/branchView" />

@@ -155,12 +155,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         String channelId = getString(R.string.default_notification_channel_id);
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-
-//        Uri sound=Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.notification);
-//        AudioAttributes att=new AudioAttributes.Builder()
-//                .setUsage(AudioAttributes.USAGE_NOTIFICATION)
-//                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-//                .build();
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this, channelId)
                         .setSmallIcon(R.drawable.ic_thumb_logo)

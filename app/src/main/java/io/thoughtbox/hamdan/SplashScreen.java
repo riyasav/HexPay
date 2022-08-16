@@ -18,7 +18,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,13 +25,12 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.UpdateAvailability;
+import com.google.android.play.core.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings;
@@ -86,6 +84,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash_screen);
         binding.setLifecycleOwner(this);
+        appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
         binding.textView46.setEnabled(false);
         checkAutoUpdate();
         init();
@@ -227,11 +226,11 @@ public class SplashScreen extends AppCompatActivity {
 
                                     if (verifyInstallerId(this)) {
 //                                        showPlayStoreDialog();
-                                        binding.textView46.setEnabled(true);
-                                        SpannableString string = new SpannableString("Latest version is available on play store. Click here to update.");
-                                        string.setSpan(new UnderlineSpan(), 43, 53, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                                        binding.textView46.setText(string);
-                                        checkUpdate();
+                                    binding.textView46.setEnabled(true);
+                                    SpannableString string = new SpannableString("Latest version is available on play store. Click here to update.");
+                                    string.setSpan(new UnderlineSpan(), 43, 53, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                                    binding.textView46.setText(string);
+                                    checkUpdate();
                                     } else {
                                         Toast.makeText(this, "This App version is not installed via play store. kindly uninstall this version and install from play store", Toast.LENGTH_SHORT).show();
                                     }
@@ -251,7 +250,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void checkUpdate() {
-        com.google.android.play.core.tasks.Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
+        Task<AppUpdateInfo> appUpdateInfoTask = appUpdateManager.getAppUpdateInfo();
         appUpdateInfoTask.addOnSuccessListener(appUpdateInfo -> {
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
                     && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
@@ -261,6 +260,7 @@ public class SplashScreen extends AppCompatActivity {
             }
         });
     }
+
 
     private void startUpdateFlow(AppUpdateInfo appUpdateInfo) {
         try {

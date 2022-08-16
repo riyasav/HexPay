@@ -579,7 +579,7 @@ public class AddBenCash extends AppCompatActivity implements SelectionListener, 
             nationality.put("id", nationalityId);
             ownerrelation.put("id", relationId);
 
-            params.put("name", Objects.requireNonNull(binding.name.getText()).toString());
+            params.put("name", Objects.requireNonNull(binding.name.getText()).toString().toUpperCase());
             params.put("idtype", idtype);
             params.put("idno", Objects.requireNonNull(binding.idNumber.getText()).toString());
             params.put("contact", Objects.requireNonNull(binding.mobile.getText()).toString());

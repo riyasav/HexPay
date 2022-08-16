@@ -458,9 +458,9 @@ public class AddBenBank extends AppCompatActivity implements SelectionListener, 
 
         try {
             params.put("platform", "ANDROID");
-            params.put("name", Objects.requireNonNull(binding.name.getText()).toString());
+            params.put("name", Objects.requireNonNull(binding.name.getText()).toString().toUpperCase());
             params.put("code", ifsc);
-            params.put("accountno", accountNumber);
+            params.put("accountno", accountNumber.toUpperCase());
             params.put("contact", Objects.requireNonNull(binding.mobile.getText()).toString());
             params.put("type", selectedType);
             params.put("transfertypedetail", transferTypeId);
@@ -503,11 +503,11 @@ public class AddBenBank extends AppCompatActivity implements SelectionListener, 
         if (!hasText(binding.type)) check = false;
         if (!hasText(binding.country)) check = false;
         if (!hasText(binding.txntype)) check = false;
-        if(transferTypeName!=null){
+        if (transferTypeName != null) {
             if (transferTypeName.contains("BANK") || transferTypeName.toUpperCase().contains("ACCOUNT")) {
                 if (!hasText(binding.accountNumber)) check = false;
                 if (!hasText(binding.confirm)) check = false;
-            }else {
+            } else {
                 binding.accountNumber.setError(null);
                 binding.accountNumber.setError(null);
             }
